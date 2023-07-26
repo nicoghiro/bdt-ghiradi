@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 0,
+    "Cognome": "Admin",
+    "Nome": "Admin",
+    "Telefono": "3249875517",
+    "FaParteSegreteria": true,
+    "ore": 0,
+    "Pres": []
+  },
+  {
+    "Id": 1,
+    "Cognome": "locatelli",
+    "Nome": "maria",
+    "Telefono": "3249875517",
+    "FaParteSegreteria": false,
+    "ore": 0,
+    "Pres": []
+  },
+  {
+    "Id": 2,
+    "Cognome": "Gervasoni",
+    "Nome": "mario ",
+    "Telefono": "3333333333",
+    "FaParteSegreteria": false,
+    "ore": 0,
+    "Pres": []
+  },
+  {
+    "Id": 3,
+    "Cognome": "Pasta",
+    "Nome": "PIzza",
+    "Telefono": "2222222222",
+    "FaParteSegreteria": true,
+    "ore": 0,
+    "Pres": []
+  }
+]

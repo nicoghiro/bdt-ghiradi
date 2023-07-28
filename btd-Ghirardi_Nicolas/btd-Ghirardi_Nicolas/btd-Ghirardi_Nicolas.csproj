@@ -62,6 +62,12 @@
     <Compile Include="FormAggiungiSocio.Designer.cs">
       <DependentUpon>FormAggiungiSocio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormModificaSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificaSocio.Designer.cs">
+      <DependentUpon>FormModificaSocio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prestazioni.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAggiungiSocio.resx">
       <DependentUpon>FormAggiungiSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModificaSocio.resx">
+      <DependentUpon>FormModificaSocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

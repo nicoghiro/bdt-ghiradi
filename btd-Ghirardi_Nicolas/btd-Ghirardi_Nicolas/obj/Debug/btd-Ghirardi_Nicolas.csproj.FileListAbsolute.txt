@@ -28,3 +28,4 @@ C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd-Ghirardi_Nicolas.csproj.CopyComplete
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd-Ghirardi_Nicolas.exe
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd-Ghirardi_Nicolas.pdb
+C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.FormModificaSocio.resources

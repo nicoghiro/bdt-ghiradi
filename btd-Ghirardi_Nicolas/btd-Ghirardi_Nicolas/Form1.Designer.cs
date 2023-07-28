@@ -30,6 +30,7 @@
         {
             this.listViewSoci = new System.Windows.Forms.ListView();
             this.btnAggiungiSocio = new System.Windows.Forms.Button();
+            this.modificaSoci = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewSoci
@@ -55,11 +56,23 @@
             this.btnAggiungiSocio.Visible = false;
             this.btnAggiungiSocio.Click += new System.EventHandler(this.btnAggiungiSocio_Click_1);
             // 
+            // modificaSoci
+            // 
+            this.modificaSoci.Location = new System.Drawing.Point(69, 123);
+            this.modificaSoci.Name = "modificaSoci";
+            this.modificaSoci.Size = new System.Drawing.Size(75, 23);
+            this.modificaSoci.TabIndex = 2;
+            this.modificaSoci.Text = "modifica";
+            this.modificaSoci.UseVisualStyleBackColor = true;
+            this.modificaSoci.Visible = false;
+            this.modificaSoci.Click += new System.EventHandler(this.modificaSoci_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1246, 483);
+            this.Controls.Add(this.modificaSoci);
             this.Controls.Add(this.btnAggiungiSocio);
             this.Controls.Add(this.listViewSoci);
             this.Name = "Form1";
@@ -74,6 +87,7 @@
 
         private System.Windows.Forms.ListView listViewSoci;
         private System.Windows.Forms.Button btnAggiungiSocio;
+        private System.Windows.Forms.Button modificaSoci;
     }
 }
 

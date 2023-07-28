@@ -28,6 +28,16 @@ namespace btd_Ghirardi_Nicolas
             Pres = new List<Prestazioni>();
             ore = 0;    
         }
+        public Socio(int id,string cognome, string nome, string telefono, bool faParteSegreteria = false)
+        {
+            Id = id;
+            Cognome = cognome;
+            Nome = nome;
+            Telefono = telefono;
+            FaParteSegreteria = faParteSegreteria;
+            Pres = new List<Prestazioni>();
+            ore = 0;
+        }
         public void Aumentaore(int aumento)
         {
             if(aumento >0)
@@ -56,7 +66,7 @@ namespace btd_Ghirardi_Nicolas
         }
         public override string ToString()
         {
-            return Nome + " " + Cognome + " " + Telefono + " " + FaParteSegreteria;
+            return Id+  ""+Nome + " " + Cognome + " " + Telefono + " " + FaParteSegreteria;
         }
     }
 }

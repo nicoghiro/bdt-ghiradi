@@ -65,15 +65,18 @@ namespace btd_Ghirardi_Nicolas
                 if (selezionato.FaParteSegreteria)
                 {
                     btnAggiungiSocio.Show();
+                    modificaSoci.Show();
                 }
                 else
                 {
                     btnAggiungiSocio.Hide();
+                    modificaSoci.Hide();
                 }
             }
             else
             {
                 btnAggiungiSocio.Hide();
+                modificaSoci.Hide();
             }
 
         }
@@ -85,25 +88,13 @@ namespace btd_Ghirardi_Nicolas
    
                 ListViewItem itemSelezionato = listViewSoci.SelectedItems[0];
                 Socio socioSelezionato = itemSelezionato.Tag as Socio;
-                MessageBox.Show(socioSelezionato.ToString());
                 return socioSelezionato;
             }
 
             return null;
         }
-        private void btnAggiungiSocio_Click_1(object sender, EventArgs e)
-        {
-            using (FormAggiungiSocio formAggiungiSocio = new FormAggiungiSocio())
-            {
-                if (formAggiungiSocio.ShowDialog() == DialogResult.OK)
-                {
-                    
-                    Socio nuovoSocio = formAggiungiSocio.GetNuovoSocio();
-                    banca.AggiungiSocio(nuovoSocio);
-                    popola(banca.Soci);
-                }
-            }
-        }
+       
+
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -121,6 +112,41 @@ namespace btd_Ghirardi_Nicolas
             {
                 MessageBox.Show("Errore durante il caricamento dei dati: " + ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        } 
+        private void btnAggiungiSocio_Click_1(object sender, EventArgs e)
+        {
+            using (FormAggiungiSocio formAggiungiSocio = new FormAggiungiSocio())
+            {
+                if (formAggiungiSocio.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    Socio nuovoSocio = formAggiungiSocio.GetNuovoSocio();
+                    banca.AggiungiSocio(nuovoSocio);
+                    popola(banca.Soci);
+                }
+            }
+        }
+
+        private void modificaSoci_Click(object sender, EventArgs e)
+        {
+            using (FormModificaSocio formModifica = new FormModificaSocio(banca.Soci))
+            {
+                if (formModifica.ShowDialog() == DialogResult.OK)
+                {
+
+                    Socio Modificato = formModifica.GetModificato();
+                    MessageBox.Show(Modificato.ToString());
+                    Socio oggettoDaSostituire = banca.Soci.FirstOrDefault(s => s.Id == Modificato.Id);
+
+                    if (oggettoDaSostituire != null)
+                    {
+                        int indiceDaSostituire = banca.Soci.IndexOf(oggettoDaSostituire);
+                        banca.Soci[indiceDaSostituire] = Modificato;
+                        popola(banca.Soci); // Potrebbe non essere necessario aggiornare nuovamente la ListView, dipende dal resto del codice.
+                    }
+                }
+                }
+            }
         }
     }
-}
+

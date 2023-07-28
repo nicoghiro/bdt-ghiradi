@@ -34,6 +34,9 @@
             this.chkSegreteria = new System.Windows.Forms.CheckBox();
             this.btnConferma = new System.Windows.Forms.Button();
             this.btnAnnulla = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNome
@@ -87,9 +90,40 @@
             this.btnAnnulla.UseVisualStyleBackColor = true;
             this.btnAnnulla.Click += new System.EventHandler(this.btnAnnulla_Click_1);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Nome";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(53, 107);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Cognome";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(53, 158);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Numero";
+            // 
             // FormAggiungiSocio
             // 
             this.ClientSize = new System.Drawing.Size(499, 424);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAnnulla);
             this.Controls.Add(this.btnConferma);
             this.Controls.Add(this.chkSegreteria);
@@ -110,5 +144,8 @@
         private System.Windows.Forms.CheckBox chkSegreteria;
         private System.Windows.Forms.Button btnConferma;
         private System.Windows.Forms.Button btnAnnulla;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

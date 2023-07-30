@@ -28,7 +28,7 @@ namespace btd_Ghirardi_Nicolas
         private void Form1_Load(object sender, EventArgs e)
         {
 
-          
+
             banca = new BTD();
             CaricaDatiDaFile("dati.json");
             popola(banca.Soci);
@@ -43,15 +43,10 @@ namespace btd_Ghirardi_Nicolas
             listViewSoci.Columns.Add("Nome", 100);
             listViewSoci.Columns.Add("Telefono", 100);
             listViewSoci.Columns.Add("segreteria", 150);
+            listViewSoci.Columns.Add("segreteria", 150);
             foreach (Socio socio in soci)
             {
-                ListViewItem item = new ListViewItem(new string[] {
-            socio.Id.ToString(),
-            socio.Cognome,
-            socio.Nome,
-            socio.Telefono,
-            socio.FaParteSegreteria ? "Sì" : "No"
-        });
+                ListViewItem item = new ListViewItem(new string[] {socio.Id.ToString(),socio.Cognome,socio.Nome,socio.Telefono,socio.FaParteSegreteria ? "Sì" : "No" ,socio.ore.ToString() });
                 item.Tag = socio;
                 listViewSoci.Items.Add(item);
             }
@@ -66,17 +61,20 @@ namespace btd_Ghirardi_Nicolas
                 {
                     btnAggiungiSocio.Show();
                     modificaSoci.Show();
+                    eliminaSocio.Show();
                 }
                 else
                 {
                     btnAggiungiSocio.Hide();
                     modificaSoci.Hide();
+                    eliminaSocio.Hide();
                 }
             }
             else
             {
                 btnAggiungiSocio.Hide();
                 modificaSoci.Hide();
+                eliminaSocio.Hide();
             }
 
         }
@@ -84,8 +82,8 @@ namespace btd_Ghirardi_Nicolas
         {
             if (listViewSoci.SelectedItems.Count > 0)
             {
-                
-   
+
+
                 ListViewItem itemSelezionato = listViewSoci.SelectedItems[0];
                 Socio socioSelezionato = itemSelezionato.Tag as Socio;
                 return socioSelezionato;
@@ -93,7 +91,7 @@ namespace btd_Ghirardi_Nicolas
 
             return null;
         }
-       
+
 
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -106,20 +104,20 @@ namespace btd_Ghirardi_Nicolas
             {
                 string json = File.ReadAllText(filePath);
                 List<Socio> soci = JsonConvert.DeserializeObject<List<Socio>>(json);
-                banca.Soci.AddRange(soci);
+                banca.Soci.AddRange(soci.Select(s => new Socio(s.Id, s.Cognome, s.Nome, s.Telefono, s.ore, s.FaParteSegreteria)));
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Errore durante il caricamento dei dati: " + ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } 
+        }
         private void btnAggiungiSocio_Click_1(object sender, EventArgs e)
         {
             using (FormAggiungiSocio formAggiungiSocio = new FormAggiungiSocio())
             {
                 if (formAggiungiSocio.ShowDialog() == DialogResult.OK)
                 {
-                    
+
                     Socio nuovoSocio = formAggiungiSocio.GetNuovoSocio();
                     banca.AggiungiSocio(nuovoSocio);
                     popola(banca.Soci);
@@ -133,20 +131,34 @@ namespace btd_Ghirardi_Nicolas
             {
                 if (formModifica.ShowDialog() == DialogResult.OK)
                 {
-
                     Socio Modificato = formModifica.GetModificato();
-                    MessageBox.Show(Modificato.ToString());
-                    Socio oggettoDaSostituire = banca.Soci.FirstOrDefault(s => s.Id == Modificato.Id);
-
-                    if (oggettoDaSostituire != null)
+                    int index = banca.Soci.BinarySearch(Modificato);
+                    if (index >= 0)
                     {
-                        int indiceDaSostituire = banca.Soci.IndexOf(oggettoDaSostituire);
-                        banca.Soci[indiceDaSostituire] = Modificato;
-                        popola(banca.Soci); // Potrebbe non essere necessario aggiornare nuovamente la ListView, dipende dal resto del codice.
+                        banca.Soci[index] = Modificato;
+                        popola(banca.Soci);
                     }
-                }
                 }
             }
         }
+
+        private void eliminaSocio_Click(object sender, EventArgs e)
+        {
+
+            using (EliminaSocio formEliminaSocio = new EliminaSocio(banca.Soci))
+            {
+                if (formEliminaSocio.ShowDialog() == DialogResult.OK)
+                {
+                    Socio socioDaEliminare = formEliminaSocio.SocioSelezionato;
+                    if (socioDaEliminare != null)
+                    {
+                        banca.Soci.Remove(socioDaEliminare);
+                        popola(banca.Soci);
+                    }
+                }
+            }
+
+        }
     }
+}
 

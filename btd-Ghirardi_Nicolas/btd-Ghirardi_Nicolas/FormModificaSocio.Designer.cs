@@ -38,6 +38,9 @@
             this.chkSegreteria = new System.Windows.Forms.CheckBox();
             this.btnConferma = new System.Windows.Forms.Button();
             this.btnAnnulla = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numOre = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewSoci
@@ -103,7 +106,7 @@
             // chkSegreteria
             // 
             this.chkSegreteria.AutoSize = true;
-            this.chkSegreteria.Location = new System.Drawing.Point(70, 260);
+            this.chkSegreteria.Location = new System.Drawing.Point(70, 302);
             this.chkSegreteria.Name = "chkSegreteria";
             this.chkSegreteria.Size = new System.Drawing.Size(92, 20);
             this.chkSegreteria.TabIndex = 8;
@@ -112,7 +115,7 @@
             // 
             // btnConferma
             // 
-            this.btnConferma.Location = new System.Drawing.Point(70, 309);
+            this.btnConferma.Location = new System.Drawing.Point(70, 340);
             this.btnConferma.Name = "btnConferma";
             this.btnConferma.Size = new System.Drawing.Size(75, 23);
             this.btnConferma.TabIndex = 9;
@@ -122,7 +125,7 @@
             // 
             // btnAnnulla
             // 
-            this.btnAnnulla.Location = new System.Drawing.Point(151, 309);
+            this.btnAnnulla.Location = new System.Drawing.Point(151, 340);
             this.btnAnnulla.Name = "btnAnnulla";
             this.btnAnnulla.Size = new System.Drawing.Size(75, 23);
             this.btnAnnulla.TabIndex = 10;
@@ -130,11 +133,34 @@
             this.btnAnnulla.UseVisualStyleBackColor = true;
             this.btnAnnulla.Click += new System.EventHandler(this.btnAnnulla_Click);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(70, 274);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.TabIndex = 11;
+            // 
+            // numOre
+            // 
+            this.numOre.AutoSize = true;
+            this.numOre.Location = new System.Drawing.Point(67, 255);
+            this.numOre.Name = "numOre";
+            this.numOre.Size = new System.Drawing.Size(29, 16);
+            this.numOre.TabIndex = 12;
+            this.numOre.Text = "Ore";
+            // 
             // FormModificaSocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 450);
+            this.Controls.Add(this.numOre);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnAnnulla);
             this.Controls.Add(this.btnConferma);
             this.Controls.Add(this.chkSegreteria);
@@ -148,6 +174,7 @@
             this.Name = "FormModificaSocio";
             this.Text = "FormModificaSocio";
             this.Load += new System.EventHandler(this.FormModificaSocio_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +192,7 @@
         private System.Windows.Forms.CheckBox chkSegreteria;
         private System.Windows.Forms.Button btnConferma;
         private System.Windows.Forms.Button btnAnnulla;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label numOre;
     }
 }

@@ -45,15 +45,10 @@ namespace btd_Ghirardi_Nicolas
             listViewSoci.Columns.Add("Nome", 100);
             listViewSoci.Columns.Add("Telefono", 100);
             listViewSoci.Columns.Add("segreteria", 150);
+            listViewSoci.Columns.Add("ore", 150);
             foreach (Socio socio in soci)
             {
-                ListViewItem item = new ListViewItem(new string[] {
-            socio.Id.ToString(),
-            socio.Cognome,
-            socio.Nome,
-            socio.Telefono,
-            socio.FaParteSegreteria ? "Sì" : "No"
-        });
+                ListViewItem item = new ListViewItem(new string[] { socio.Id.ToString(), socio.Cognome, socio.Nome, socio.Telefono, socio.FaParteSegreteria ? "Sì" : "No", socio.ore.ToString() });
                 item.Tag = socio;
                 listViewSoci.Items.Add(item);
             }
@@ -70,9 +65,10 @@ namespace btd_Ghirardi_Nicolas
             string nome = txtNome.Text;
             string telefono = txtTelefono.Text;
             bool faParteSegreteria = chkSegreteria.Checked;
+            int numOre = Convert.ToInt32(numericUpDown1.Value);
 
             
-            Socio nuovoSocio = new Socio(id,cognome, nome, telefono, faParteSegreteria);
+            Socio nuovoSocio = new Socio(id,cognome, nome, telefono, numOre,faParteSegreteria);
 
           
             return nuovoSocio;
@@ -89,6 +85,7 @@ namespace btd_Ghirardi_Nicolas
                     txtCognome.Text = selezionato.Cognome;
                     txtTelefono.Text = selezionato.Telefono;
                     chkSegreteria.Checked = selezionato.FaParteSegreteria;
+                    numericUpDown1.Value = selezionato.ore;
                 }
                 else
                 {

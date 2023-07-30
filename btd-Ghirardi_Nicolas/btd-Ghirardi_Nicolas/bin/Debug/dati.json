@@ -14,25 +14,16 @@
     "Nome": "maria",
     "Telefono": "3249875517",
     "FaParteSegreteria": false,
-    "ore": 0,
+    "ore": 3,
     "Pres": []
   },
   {
     "Id": 2,
-    "Cognome": "Gervasoni",
-    "Nome": "mario ",
-    "Telefono": "3333333333",
+    "Cognome": "ghirardi",
+    "Nome": "nicolas",
+    "Telefono": "3219875517",
     "FaParteSegreteria": false,
-    "ore": 0,
-    "Pres": []
-  },
-  {
-    "Id": 3,
-    "Cognome": "Pasta",
-    "Nome": "PIzza",
-    "Telefono": "2222222222",
-    "FaParteSegreteria": true,
-    "ore": 0,
+    "ore": 3,
     "Pres": []
   }
 ]

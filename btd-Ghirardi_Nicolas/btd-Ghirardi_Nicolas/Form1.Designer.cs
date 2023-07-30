@@ -31,6 +31,7 @@
             this.listViewSoci = new System.Windows.Forms.ListView();
             this.btnAggiungiSocio = new System.Windows.Forms.Button();
             this.modificaSoci = new System.Windows.Forms.Button();
+            this.eliminaSocio = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewSoci
@@ -67,11 +68,23 @@
             this.modificaSoci.Visible = false;
             this.modificaSoci.Click += new System.EventHandler(this.modificaSoci_Click);
             // 
+            // eliminaSocio
+            // 
+            this.eliminaSocio.Location = new System.Drawing.Point(69, 162);
+            this.eliminaSocio.Name = "eliminaSocio";
+            this.eliminaSocio.Size = new System.Drawing.Size(75, 23);
+            this.eliminaSocio.TabIndex = 3;
+            this.eliminaSocio.Text = "elimina";
+            this.eliminaSocio.UseVisualStyleBackColor = true;
+            this.eliminaSocio.Visible = false;
+            this.eliminaSocio.Click += new System.EventHandler(this.eliminaSocio_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1246, 483);
+            this.Controls.Add(this.eliminaSocio);
             this.Controls.Add(this.modificaSoci);
             this.Controls.Add(this.btnAggiungiSocio);
             this.Controls.Add(this.listViewSoci);
@@ -88,6 +101,7 @@
         private System.Windows.Forms.ListView listViewSoci;
         private System.Windows.Forms.Button btnAggiungiSocio;
         private System.Windows.Forms.Button modificaSoci;
+        private System.Windows.Forms.Button eliminaSocio;
     }
 }
 

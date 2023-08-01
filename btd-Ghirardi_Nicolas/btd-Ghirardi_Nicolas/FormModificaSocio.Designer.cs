@@ -46,7 +46,7 @@
             // listViewSoci
             // 
             this.listViewSoci.HideSelection = false;
-            this.listViewSoci.Location = new System.Drawing.Point(447, 107);
+            this.listViewSoci.Location = new System.Drawing.Point(302, 77);
             this.listViewSoci.MultiSelect = false;
             this.listViewSoci.Name = "listViewSoci";
             this.listViewSoci.Size = new System.Drawing.Size(505, 295);
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 450);
+            this.ClientSize = new System.Drawing.Size(845, 445);
             this.Controls.Add(this.numOre);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnAnnulla);

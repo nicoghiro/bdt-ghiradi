@@ -120,7 +120,7 @@
             // 
             // FormAggiungiSocio
             // 
-            this.ClientSize = new System.Drawing.Size(499, 424);
+            this.ClientSize = new System.Drawing.Size(499, 295);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

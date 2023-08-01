@@ -19,16 +19,18 @@
       "Pres": []
     },
     {
-      "Id": 2,
+      "Id": 3,
       "Cognome": "Locatelli",
       "Nome": "Maria",
-      "Telefono": "32498875517",
+      "Telefono": "3249875517",
       "FaParteSegreteria": false,
       "ore": 0,
       "Pres": []
     }
   ],
   "CategoriePrestazioni": [
-    "Segreteria"
+    "Segreteria",
+    "Meccanico",
+    "Elettricista"
   ]
 }

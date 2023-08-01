@@ -32,12 +32,13 @@
             this.btnAggiungiSocio = new System.Windows.Forms.Button();
             this.modificaSoci = new System.Windows.Forms.Button();
             this.eliminaSocio = new System.Windows.Forms.Button();
+            this.Categorie = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewSoci
             // 
             this.listViewSoci.HideSelection = false;
-            this.listViewSoci.Location = new System.Drawing.Point(579, 85);
+            this.listViewSoci.Location = new System.Drawing.Point(294, 85);
             this.listViewSoci.MultiSelect = false;
             this.listViewSoci.Name = "listViewSoci";
             this.listViewSoci.Size = new System.Drawing.Size(637, 361);
@@ -50,9 +51,9 @@
             // 
             this.btnAggiungiSocio.Location = new System.Drawing.Point(69, 85);
             this.btnAggiungiSocio.Name = "btnAggiungiSocio";
-            this.btnAggiungiSocio.Size = new System.Drawing.Size(75, 23);
+            this.btnAggiungiSocio.Size = new System.Drawing.Size(127, 32);
             this.btnAggiungiSocio.TabIndex = 1;
-            this.btnAggiungiSocio.Text = "aggiungi soci";
+            this.btnAggiungiSocio.Text = "Aggiungi soci";
             this.btnAggiungiSocio.UseVisualStyleBackColor = true;
             this.btnAggiungiSocio.Visible = false;
             this.btnAggiungiSocio.Click += new System.EventHandler(this.btnAggiungiSocio_Click_1);
@@ -61,9 +62,9 @@
             // 
             this.modificaSoci.Location = new System.Drawing.Point(69, 123);
             this.modificaSoci.Name = "modificaSoci";
-            this.modificaSoci.Size = new System.Drawing.Size(75, 23);
+            this.modificaSoci.Size = new System.Drawing.Size(127, 33);
             this.modificaSoci.TabIndex = 2;
-            this.modificaSoci.Text = "modifica";
+            this.modificaSoci.Text = "Modifica soci";
             this.modificaSoci.UseVisualStyleBackColor = true;
             this.modificaSoci.Visible = false;
             this.modificaSoci.Click += new System.EventHandler(this.modificaSoci_Click);
@@ -72,22 +73,36 @@
             // 
             this.eliminaSocio.Location = new System.Drawing.Point(69, 162);
             this.eliminaSocio.Name = "eliminaSocio";
-            this.eliminaSocio.Size = new System.Drawing.Size(75, 23);
+            this.eliminaSocio.Size = new System.Drawing.Size(127, 36);
             this.eliminaSocio.TabIndex = 3;
-            this.eliminaSocio.Text = "elimina";
+            this.eliminaSocio.Text = "Elimina soci";
             this.eliminaSocio.UseVisualStyleBackColor = true;
             this.eliminaSocio.Visible = false;
             this.eliminaSocio.Click += new System.EventHandler(this.eliminaSocio_Click);
+            // 
+            // Categorie
+            // 
+            this.Categorie.Location = new System.Drawing.Point(69, 204);
+            this.Categorie.Name = "Categorie";
+            this.Categorie.Size = new System.Drawing.Size(127, 35);
+            this.Categorie.TabIndex = 4;
+            this.Categorie.Text = "Categorie";
+            this.Categorie.UseVisualStyleBackColor = true;
+            this.Categorie.Visible = false;
+            this.Categorie.Click += new System.EventHandler(this.Categorie_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 483);
+            this.ClientSize = new System.Drawing.Size(968, 485);
+            this.Controls.Add(this.Categorie);
             this.Controls.Add(this.eliminaSocio);
             this.Controls.Add(this.modificaSoci);
             this.Controls.Add(this.btnAggiungiSocio);
             this.Controls.Add(this.listViewSoci);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -102,6 +117,7 @@
         private System.Windows.Forms.Button btnAggiungiSocio;
         private System.Windows.Forms.Button modificaSoci;
         private System.Windows.Forms.Button eliminaSocio;
+        private System.Windows.Forms.Button Categorie;
     }
 }
 

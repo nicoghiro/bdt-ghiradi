@@ -33,7 +33,7 @@ namespace btd_Ghirardi_Nicolas
             CaricaDatiDaFile("dati.json");
             popola(banca.Soci);
             listViewSoci.FullRowSelect = true;
-            banca.AggiungiCategoria("Segreteria");
+            
           
         }
         public void popola(List<Socio> soci)
@@ -63,12 +63,14 @@ namespace btd_Ghirardi_Nicolas
                     btnAggiungiSocio.Show();
                     modificaSoci.Show();
                     eliminaSocio.Show();
+                    Categorie.Show();
                 }
                 else
                 {
                     btnAggiungiSocio.Hide();
                     modificaSoci.Hide();
                     eliminaSocio.Hide();
+                    Categorie.Hide();
                 }
             }
             else
@@ -76,6 +78,7 @@ namespace btd_Ghirardi_Nicolas
                 btnAggiungiSocio.Hide();
                 modificaSoci.Hide();
                 eliminaSocio.Hide();
+                Categorie.Hide();
             }
 
         }
@@ -170,6 +173,14 @@ namespace btd_Ghirardi_Nicolas
                 }
             }
 
+        }
+
+        private void Categorie_Click(object sender, EventArgs e)
+        {
+            using (GestioneCategorie formGestioneCategorie = new GestioneCategorie(banca))
+            {
+                formGestioneCategorie.ShowDialog();
+            }
         }
     }
 }

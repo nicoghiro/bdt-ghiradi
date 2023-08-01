@@ -33,7 +33,8 @@ namespace btd_Ghirardi_Nicolas
             CaricaDatiDaFile("dati.json");
             popola(banca.Soci);
             listViewSoci.FullRowSelect = true;
-
+            banca.AggiungiCategoria("Segreteria");
+          
         }
         public void popola(List<Socio> soci)
         {
@@ -96,19 +97,30 @@ namespace btd_Ghirardi_Nicolas
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            banca.SalvaDatiSuFile("dati.json");
+            SalvaDatiSuFile("dati.json");
         }
         private void CaricaDatiDaFile(string filePath)
         {
             try
             {
                 string json = File.ReadAllText(filePath);
-                List<Socio> soci = JsonConvert.DeserializeObject<List<Socio>>(json);
-                banca.Soci.AddRange(soci.Select(s => new Socio(s.Id, s.Cognome, s.Nome, s.Telefono, s.ore, s.FaParteSegreteria)));
+                banca = JsonConvert.DeserializeObject<BTD>(json);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Errore durante il caricamento dei dati: " + ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void SalvaDatiSuFile(string filePath)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(banca,Formatting.Indented);
+                File.WriteAllText(filePath, json);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errore durante il salvataggio dei dati: " + ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnAggiungiSocio_Click_1(object sender, EventArgs e)

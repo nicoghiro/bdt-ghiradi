@@ -9,16 +9,23 @@ using System.IO;
 
 namespace btd_Ghirardi_Nicolas
 {
-   public class BTD
+    [JsonObject]
+    public class BTD
     {
         public List<Socio> Soci { get; private set; }
+        public List<string> CategoriePrestazioni { get; private set; }
+
+        [JsonConstructor]
         public BTD()
         {
-            Soci = new List<Socio>();   
+            Soci = new List<Socio>();
+            CategoriePrestazioni = new List<string>();
         }
+
         public List<Socio> Indebitati()
         {
             List<Socio> indebit = new List<Socio>();
+
             foreach(Socio socio in Soci)
             {
                 if(socio.ore < 0)
@@ -51,7 +58,7 @@ namespace btd_Ghirardi_Nicolas
             {
                 foreach(Prestazioni pres in s.Pres)
                 {
-                    if (pres.categoria == categoria)
+                    if (pres.Categoria == categoria)
                     {
                         list.Add(pres);
                     }
@@ -67,10 +74,26 @@ namespace btd_Ghirardi_Nicolas
                 Soci.Add(nuovo);
             }
         }
-        public void SalvaDatiSuFile(string filePath)
+        public void AggiungiCategoria(string categoria)
         {
-            string json = JsonConvert.SerializeObject(Soci, Formatting.Indented);
-            File.WriteAllText(filePath, json);
+            if (!CategoriePrestazioni.Contains(categoria))
+            {
+                CategoriePrestazioni.Add(categoria);
+            }
+        }
+
+        public void ModificaCategoria(string vecchiaCategoria, string nuovaCategoria)
+        {
+            int index = CategoriePrestazioni.IndexOf(vecchiaCategoria);
+            if (index >= 0)
+            {
+                CategoriePrestazioni[index] = nuovaCategoria;
+            }
+        }
+
+        public void EliminaCategoria(string categoria)
+        {
+            CategoriePrestazioni.Remove(categoria);
         }
     }
 }

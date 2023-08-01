@@ -1,29 +1,34 @@
-[
-  {
-    "Id": 0,
-    "Cognome": "Admin",
-    "Nome": "Admin",
-    "Telefono": "3249875517",
-    "FaParteSegreteria": true,
-    "ore": 0,
-    "Pres": []
-  },
-  {
-    "Id": 1,
-    "Cognome": "locatelli",
-    "Nome": "maria",
-    "Telefono": "3249875517",
-    "FaParteSegreteria": false,
-    "ore": 3,
-    "Pres": []
-  },
-  {
-    "Id": 2,
-    "Cognome": "ghirardi",
-    "Nome": "nicolas",
-    "Telefono": "3219875517",
-    "FaParteSegreteria": false,
-    "ore": 3,
-    "Pres": []
-  }
-]
+{
+  "Soci": [
+    {
+      "Id": 0,
+      "Cognome": "Admin",
+      "Nome": "Admin",
+      "Telefono": "0000000000",
+      "FaParteSegreteria": true,
+      "ore": 0,
+      "Pres": []
+    },
+    {
+      "Id": 1,
+      "Cognome": "Admin",
+      "Nome": "Admin",
+      "Telefono": "0000000000",
+      "FaParteSegreteria": true,
+      "ore": 0,
+      "Pres": []
+    },
+    {
+      "Id": 2,
+      "Cognome": "Locatelli",
+      "Nome": "Maria",
+      "Telefono": "32498875517",
+      "FaParteSegreteria": false,
+      "ore": 0,
+      "Pres": []
+    }
+  ],
+  "CategoriePrestazioni": [
+    "Segreteria"
+  ]
+}

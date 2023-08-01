@@ -18,7 +18,7 @@ namespace btd_Ghirardi_Nicolas
         public int ore { get; private set; }
 
         public List<Prestazioni> Pres { get; private set; }
-
+        
         public Socio(string cognome, string nome, string telefono, bool faParteSegreteria = false)
         {
             Id = NextId++;
@@ -42,7 +42,7 @@ namespace btd_Ghirardi_Nicolas
         }
 
         [JsonConstructor]
-        public Socio(int id, string cognome, string nome, int ore, string telefono, bool faParteSegreteria = false)
+        public Socio(int id, string cognome, string nome,List<string>categorie, int ore, string telefono, bool faParteSegreteria = false)
         {
             Id = NextId++;
             Cognome = cognome;
@@ -50,8 +50,12 @@ namespace btd_Ghirardi_Nicolas
             Telefono = telefono;
             FaParteSegreteria = faParteSegreteria;
             Pres = new List<Prestazioni>();
-            this.ore= ore;
+            this.ore = ore;
+          
+            
+
         }
+       
 
         public void Aumentaore(int aumento)
         {

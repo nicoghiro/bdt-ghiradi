@@ -31,3 +31,5 @@ C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.FormModificaSocio.resources
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.EliminaSocio.resources
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.GestioneCategorie.resources
+C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.VisualizzaPrestazioni.resources
+C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.AggiungiPrestazione.resources

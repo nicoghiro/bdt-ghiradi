@@ -182,6 +182,12 @@ namespace btd_Ghirardi_Nicolas
                 formGestioneCategorie.ShowDialog();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VisualizzaPrestazioni visualizzaPrestazioniForm = new VisualizzaPrestazioni(banca, GetSocioSelezionato());
+            visualizzaPrestazioniForm.Show();
+        }
     }
 }
 

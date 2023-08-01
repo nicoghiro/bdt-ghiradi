@@ -33,6 +33,7 @@
             this.modificaSoci = new System.Windows.Forms.Button();
             this.eliminaSocio = new System.Windows.Forms.Button();
             this.Categorie = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewSoci
@@ -91,11 +92,22 @@
             this.Categorie.Visible = false;
             this.Categorie.Click += new System.EventHandler(this.Categorie_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(69, 245);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 35);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Prestazioni utente";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 485);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Categorie);
             this.Controls.Add(this.eliminaSocio);
             this.Controls.Add(this.modificaSoci);
@@ -118,6 +130,7 @@
         private System.Windows.Forms.Button modificaSoci;
         private System.Windows.Forms.Button eliminaSocio;
         private System.Windows.Forms.Button Categorie;
+        private System.Windows.Forms.Button button1;
     }
 }
 

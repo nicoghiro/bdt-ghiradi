@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggiungiPrestazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AggiungiPrestazione.Designer.cs">
+      <DependentUpon>AggiungiPrestazione.cs</DependentUpon>
+    </Compile>
     <Compile Include="BTD.cs" />
     <Compile Include="EliminaSocio.cs">
       <SubType>Form</SubType>
@@ -84,6 +90,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Socio.cs" />
+    <Compile Include="VisualizzaPrestazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizzaPrestazioni.Designer.cs">
+      <DependentUpon>VisualizzaPrestazioni.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AggiungiPrestazione.resx">
+      <DependentUpon>AggiungiPrestazione.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EliminaSocio.resx">
       <DependentUpon>EliminaSocio.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +123,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VisualizzaPrestazioni.resx">
+      <DependentUpon>VisualizzaPrestazioni.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

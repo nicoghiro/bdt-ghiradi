@@ -1,84 +1,37 @@
 {
   "Pres": [
     {
+      "Id": 0,
       "Categoria": "Meccanico",
       "Occupato": false,
-      "Lavoro": "aggiusto macchine",
+      "Lavoro": "riparo macchine ford",
       "IdDatore": 2,
       "IdRichiedente": -1,
-      "Ore": 2,
-      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
+      "Ore": 7,
+      "Creazione": "2023-08-04T23:20:36.3332383+02:00",
       "Occupazione": "0001-01-01T00:00:00"
     },
     {
+      "Id": 1,
       "Categoria": "Elettricista",
       "Occupato": false,
-      "Lavoro": "aggiusto circuiti",
-      "IdDatore": 2,
-      "IdRichiedente": -1,
-      "Ore": 6,
-      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
-    },
-    {
-      "Categoria": "Meccanico",
-      "Occupato": false,
-      "Lavoro": "macchine utensili",
-      "IdDatore": 2,
-      "IdRichiedente": -1,
-      "Ore": 1,
-      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
-    },
-    {
-      "Categoria": "Elettricista",
-      "Occupato": false,
-      "Lavoro": "non so ",
-      "IdDatore": 2,
-      "IdRichiedente": -1,
-      "Ore": 17,
-      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
-    },
-    {
-      "Categoria": "Elettricista",
-      "Occupato": false,
-      "Lavoro": "boh",
+      "Lavoro": "riparo impianti elettrici",
       "IdDatore": 2,
       "IdRichiedente": -1,
       "Ore": 3,
-      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
+      "Creazione": "2023-08-04T23:20:36.3352386+02:00",
       "Occupazione": "0001-01-01T00:00:00"
     },
     {
+      "Id": 2,
       "Categoria": "Elettricista",
-      "Occupato": false,
-      "Lavoro": "san",
-      "IdDatore": 2,
-      "IdRichiedente": -1,
-      "Ore": 6,
-      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
-    },
-    {
-      "Categoria": "Meccanico",
-      "Occupato": false,
-      "Lavoro": "mannaggia",
-      "IdDatore": 2,
-      "IdRichiedente": -1,
-      "Ore": 2,
-      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
-    },
-    {
-      "Categoria": "Segreteria",
-      "Occupato": false,
-      "Lavoro": "isdhgvis",
-      "IdDatore": 2,
-      "IdRichiedente": -1,
-      "Ore": 1,
-      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
+      "Occupato": true,
+      "Lavoro": "tiparo nintendo ds rotti",
+      "IdDatore": 3,
+      "IdRichiedente": 2,
+      "Ore": 30,
+      "Creazione": "2023-08-04T23:20:36.3352386+02:00",
+      "Occupazione": "2023-08-04T23:20:56.477194+02:00"
     }
   ],
   "Soci": [
@@ -104,7 +57,7 @@
       "Nome": "Maria",
       "Telefono": "3249875517",
       "FaParteSegreteria": false,
-      "ore": 2
+      "ore": 39
     },
     {
       "Id": 3,
@@ -112,12 +65,13 @@
       "Nome": "mamma",
       "Telefono": "3333333333",
       "FaParteSegreteria": true,
-      "ore": 6
+      "ore": 66
     }
   ],
   "CategoriePrestazioni": [
     "Segreteria",
     "Meccanico",
-    "Elettricista"
+    "Elettricista",
+    "Cuoco"
   ]
 }

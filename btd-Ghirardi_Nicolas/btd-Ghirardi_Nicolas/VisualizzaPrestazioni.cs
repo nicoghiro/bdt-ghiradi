@@ -37,7 +37,7 @@ namespace btd_Ghirardi_Nicolas
         {
             lstAttivita.Columns.Add("Categoria", 150);
             lstAttivita.Columns.Add("Lavoro", 200);
-            lstAttivita.Columns.Add("Telefono", 100);
+            lstAttivita.Columns.Add("Ore", 100);
             lstAttivita.Columns.Add("Stato", 100);
         }
 
@@ -101,6 +101,66 @@ namespace btd_Ghirardi_Nicolas
             {
                 List<Prestazioni> attivitaPerCategoria = socio.GetPrestazioni(banca.Pres).Where(p => p.Categoria == categoriaFiltro).ToList();
                 PopulateAttivita(attivitaPerCategoria);
+            }
+        }
+
+        private void btnEliminaPrestazione_Click(object sender, EventArgs e)
+        {
+            if (lstAttivita.SelectedItems.Count > 0)
+            {
+                Prestazioni prestazioneSelezionata = lstAttivita.SelectedItems[0].Tag as Prestazioni;
+
+                if (prestazioneSelezionata != null)
+                {
+                    if (prestazioneSelezionata.Occupato)
+                    {
+                        MessageBox.Show("Questa prestazione è già occupata e non può essere eliminata.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("Sei sicuro di voler eliminare questa prestazione?", "Conferma Eliminazione", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            banca.EliminaPrestazione(prestazioneSelezionata.IdDatore);
+                            PopulateAttivita(socio.GetPrestazioni(banca.Pres));
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleziona una prestazione da eliminare.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnModifica_Click(object sender, EventArgs e)
+        {
+            if (lstAttivita.SelectedItems.Count > 0)
+            {
+                Prestazioni prestazioneSelezionata = lstAttivita.SelectedItems[0].Tag as Prestazioni;
+
+                if (prestazioneSelezionata != null)
+                {
+                    if (prestazioneSelezionata.Occupato)
+                    {
+                        MessageBox.Show("Questa prestazione è già occupata e non può essere modificata.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        using (ModificaPrestazione formModificaPrestazione = new ModificaPrestazione(prestazioneSelezionata, banca, socio))
+                        {
+                            if (formModificaPrestazione.ShowDialog() == DialogResult.OK)
+                            {
+                                PopulateAttivita(socio.GetPrestazioni(banca.Pres));
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleziona una prestazione da modificare.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

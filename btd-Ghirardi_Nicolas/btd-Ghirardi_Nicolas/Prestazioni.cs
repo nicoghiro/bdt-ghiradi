@@ -1,9 +1,13 @@
 ﻿using btd_Ghirardi_Nicolas;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public class Prestazioni
 {
+    private static int NextId = 0;
+    public int Id { get; private set; }
     public string Categoria { get; private set; }
     public bool Occupato { get; private set; }
     public string Lavoro { get; private set; }
@@ -15,6 +19,19 @@ public class Prestazioni
 
     public Prestazioni(string categoria, string lavoro, int idDatore, int ore)
     {
+        Id = NextId++;
+        Categoria = categoria;
+        Occupato = false;
+        Lavoro = lavoro;
+        IdDatore = idDatore;
+        IdRichiedente = -1; // Nessun richiedente inizialmente
+        Ore = ore;
+        Creazione = DateTime.Now;
+    }
+    [JsonConstructor]
+    public Prestazioni(int id, string categoria, string lavoro, int idDatore, int ore)
+    {
+        Id = NextId++;
         Categoria = categoria;
         Occupato = false;
         Lavoro = lavoro;
@@ -24,22 +41,26 @@ public class Prestazioni
         Creazione = DateTime.Now;
     }
 
-    public void Occupa(int richiedenteId, BTD banca)
+    public void Occupa(int richiedenteId, int datoreId, List<Socio> soci)
     {
         if (Occupato)
-            throw new InvalidOperationException("Questa attività è già occupata.");
+            throw new Exception("Questa attività è già occupata.");
 
-        Socio richiedente = banca.Soci.FirstOrDefault(s => s.Id == richiedenteId);
-        if (richiedente == null)
-            throw new InvalidOperationException("Il socio richiedente non esiste.");
-
-        if (richiedente.ore < Ore)
-            throw new InvalidOperationException("Il richiedente non ha abbastanza ore disponibili.");
-
-        Occupato = true;
         IdRichiedente = richiedenteId;
-        banca.AggiungiOreSocio(IdDatore, Ore);
-        banca.DiminuisciOreSocio(richiedenteId, Ore);
+        Occupato = true;
+
+        Socio richiedente = soci.FirstOrDefault(s => s.Id == IdRichiedente);
+        if (richiedente != null)
+        {
+            richiedente.DiminuisciOre(Ore);
+        }
+
+        Socio datore = soci.FirstOrDefault(s => s.Id == datoreId);
+        if (datore != null)
+        {
+            datore.Aumentaore(Ore);
+        }
+
         Occupazione = DateTime.Now;
     }
     public void ModificaPrestazione(string nuovaCategoria, string nuovoLavoro, int nuoveOre)

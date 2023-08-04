@@ -36,6 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
+            this.btnPrestazioniAltri = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewSoci
@@ -127,11 +128,23 @@
             this.cmbFiltro.TabIndex = 6;
             this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
+            // btnPrestazioniAltri
+            // 
+            this.btnPrestazioniAltri.Location = new System.Drawing.Point(69, 286);
+            this.btnPrestazioniAltri.Name = "btnPrestazioniAltri";
+            this.btnPrestazioniAltri.Size = new System.Drawing.Size(127, 35);
+            this.btnPrestazioniAltri.TabIndex = 8;
+            this.btnPrestazioniAltri.Text = "Prestazioni altrui";
+            this.btnPrestazioniAltri.UseVisualStyleBackColor = true;
+            this.btnPrestazioniAltri.Visible = false;
+            this.btnPrestazioniAltri.Click += new System.EventHandler(this.btnPrestazioniAltri_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 485);
+            this.Controls.Add(this.btnPrestazioniAltri);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.button1);
@@ -161,6 +174,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbFiltro;
+        private System.Windows.Forms.Button btnPrestazioniAltri;
     }
 }
 

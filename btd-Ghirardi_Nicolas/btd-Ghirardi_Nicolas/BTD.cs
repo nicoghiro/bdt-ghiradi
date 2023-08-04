@@ -38,10 +38,10 @@ namespace btd_Ghirardi_Nicolas
             }
             return indebit;
         }
-        
+
         public void Occupaprestazione(Prestazioni pres, Socio richiedente)
         {
-            pres.Occupa(richiedente.Id,this);
+            pres.Occupa(richiedente.Id, pres.IdDatore, Soci);
         }
         public void AggiungiSocio(Socio nuovo)
         {
@@ -103,13 +103,13 @@ namespace btd_Ghirardi_Nicolas
             }
         }
 
-        public void EliminaPrestazione(int idDatore)
+        public void EliminaPrestazione(int idPrestazione)
         {
-            Prestazioni prestazioneDaEliminare = Pres.FirstOrDefault(p => p.IdDatore == idDatore);
-            if (prestazioneDaEliminare != null)
-            {
-                Pres.Remove(prestazioneDaEliminare);
-            }
+  Prestazioni prestazioneDaEliminare = Pres.FirstOrDefault(p => p.Id == idPrestazione);
+    if (prestazioneDaEliminare != null)
+    {
+        Pres.Remove(prestazioneDaEliminare);
+    }
         }
     }
    

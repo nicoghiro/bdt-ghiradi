@@ -34,6 +34,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.cmbCategoriaFiltro = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnEliminaPrestazione = new System.Windows.Forms.Button();
+            this.btnModifica = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbFiltro
@@ -98,11 +100,33 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Filtro Categoria";
             // 
+            // btnEliminaPrestazione
+            // 
+            this.btnEliminaPrestazione.Location = new System.Drawing.Point(27, 203);
+            this.btnEliminaPrestazione.Name = "btnEliminaPrestazione";
+            this.btnEliminaPrestazione.Size = new System.Drawing.Size(134, 46);
+            this.btnEliminaPrestazione.TabIndex = 6;
+            this.btnEliminaPrestazione.Text = "elimina";
+            this.btnEliminaPrestazione.UseVisualStyleBackColor = true;
+            this.btnEliminaPrestazione.Click += new System.EventHandler(this.btnEliminaPrestazione_Click);
+            // 
+            // btnModifica
+            // 
+            this.btnModifica.Location = new System.Drawing.Point(27, 255);
+            this.btnModifica.Name = "btnModifica";
+            this.btnModifica.Size = new System.Drawing.Size(134, 46);
+            this.btnModifica.TabIndex = 7;
+            this.btnModifica.Text = "Modifica";
+            this.btnModifica.UseVisualStyleBackColor = true;
+            this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
+            // 
             // VisualizzaPrestazioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnModifica);
+            this.Controls.Add(this.btnEliminaPrestazione);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbCategoriaFiltro);
             this.Controls.Add(this.button1);
@@ -125,5 +149,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmbCategoriaFiltro;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnEliminaPrestazione;
+        private System.Windows.Forms.Button btnModifica;
     }
 }

@@ -66,6 +66,7 @@ namespace btd_Ghirardi_Nicolas
                     eliminaSocio.Show();
                     Categorie.Show();
                     button1.Show();
+                    btnPrestazioniAltri.Show();
                 }
                 else
                 {
@@ -74,6 +75,7 @@ namespace btd_Ghirardi_Nicolas
                     eliminaSocio.Hide();
                     Categorie.Hide();
                     button1.Show();
+                    btnPrestazioniAltri.Show();
                 }
             }
             else
@@ -83,6 +85,7 @@ namespace btd_Ghirardi_Nicolas
                 eliminaSocio.Hide();
                 Categorie.Hide();
                 button1.Hide();
+                btnPrestazioniAltri.Hide();
             }
 
         }
@@ -215,6 +218,21 @@ namespace btd_Ghirardi_Nicolas
             {
                 List<Socio> sociOrdinatiPerOreCrescente = banca.Soci.OrderBy(socio => socio.ore).ToList();
                 popola(sociOrdinatiPerOreCrescente);
+            }
+        }
+
+        private void btnPrestazioniAltri_Click(object sender, EventArgs e)
+        {
+            Socio utenteSelezionato = GetSocioSelezionato();
+
+            if (utenteSelezionato != null)
+            {
+                VisualizzaPrestazioniAltri visualizzaPrestazioniAltriForm = new VisualizzaPrestazioniAltri(banca, utenteSelezionato);
+                visualizzaPrestazioniAltriForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Seleziona un utente per visualizzare le sue prestazioni.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

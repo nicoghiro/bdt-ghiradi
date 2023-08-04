@@ -112,7 +112,7 @@
             this.Controls.Add(this.cmbCategoria);
             this.Name = "AggiungiPrestazione";
             this.Text = "AggiungiAttivita";
-            this.Load += new System.EventHandler(this.AggiungiAttivita_Load);
+            this.Load += new System.EventHandler(this.AggiungiPrestazione_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numOre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

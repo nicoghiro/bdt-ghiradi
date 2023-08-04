@@ -1,6 +1,6 @@
 ﻿namespace btd_Ghirardi_Nicolas
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -34,6 +34,8 @@
             this.eliminaSocio = new System.Windows.Forms.Button();
             this.Categorie = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listViewSoci
@@ -100,13 +102,38 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Prestazioni utente";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(305, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Filtro Visualizzazzione";
+            // 
+            // cmbFiltro
+            // 
+            this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.Items.AddRange(new object[] {
+            "Indebitati",
+            "Num. ore decrescente",
+            "Num. ore crescente"});
+            this.cmbFiltro.Location = new System.Drawing.Point(308, 43);
+            this.cmbFiltro.Name = "cmbFiltro";
+            this.cmbFiltro.Size = new System.Drawing.Size(121, 24);
+            this.cmbFiltro.TabIndex = 6;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
+            // 
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 485);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Categorie);
             this.Controls.Add(this.eliminaSocio);
@@ -115,11 +142,12 @@
             this.Controls.Add(this.listViewSoci);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Home";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,6 +159,8 @@
         private System.Windows.Forms.Button eliminaSocio;
         private System.Windows.Forms.Button Categorie;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbFiltro;
     }
 }
 

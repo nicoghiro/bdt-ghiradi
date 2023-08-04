@@ -20,7 +20,6 @@ C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\bin\Debug\Newtonsoft.Json.xml
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd-Ghirardi_Nicolas.csproj.AssemblyReference.cache
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd-Ghirardi_Nicolas.csproj.SuggestedBindingRedirects.cache
-C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.Form1.resources
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.FormAggiungiSocio.resources
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.Properties.Resources.resources
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd-Ghirardi_Nicolas.csproj.GenerateResource.cache
@@ -33,3 +32,4 @@ C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.GestioneCategorie.resources
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.VisualizzaPrestazioni.resources
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.AggiungiPrestazione.resources
+C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.Home.resources

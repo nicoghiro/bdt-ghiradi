@@ -1,4 +1,86 @@
 {
+  "Pres": [
+    {
+      "Categoria": "Meccanico",
+      "Occupato": false,
+      "Lavoro": "aggiusto macchine",
+      "IdDatore": 2,
+      "IdRichiedente": -1,
+      "Ore": 2,
+      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
+      "Occupazione": "0001-01-01T00:00:00"
+    },
+    {
+      "Categoria": "Elettricista",
+      "Occupato": false,
+      "Lavoro": "aggiusto circuiti",
+      "IdDatore": 2,
+      "IdRichiedente": -1,
+      "Ore": 6,
+      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
+      "Occupazione": "0001-01-01T00:00:00"
+    },
+    {
+      "Categoria": "Meccanico",
+      "Occupato": false,
+      "Lavoro": "macchine utensili",
+      "IdDatore": 2,
+      "IdRichiedente": -1,
+      "Ore": 1,
+      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
+      "Occupazione": "0001-01-01T00:00:00"
+    },
+    {
+      "Categoria": "Elettricista",
+      "Occupato": false,
+      "Lavoro": "non so ",
+      "IdDatore": 2,
+      "IdRichiedente": -1,
+      "Ore": 17,
+      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
+      "Occupazione": "0001-01-01T00:00:00"
+    },
+    {
+      "Categoria": "Elettricista",
+      "Occupato": false,
+      "Lavoro": "boh",
+      "IdDatore": 2,
+      "IdRichiedente": -1,
+      "Ore": 3,
+      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
+      "Occupazione": "0001-01-01T00:00:00"
+    },
+    {
+      "Categoria": "Elettricista",
+      "Occupato": false,
+      "Lavoro": "san",
+      "IdDatore": 2,
+      "IdRichiedente": -1,
+      "Ore": 6,
+      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
+      "Occupazione": "0001-01-01T00:00:00"
+    },
+    {
+      "Categoria": "Meccanico",
+      "Occupato": false,
+      "Lavoro": "mannaggia",
+      "IdDatore": 2,
+      "IdRichiedente": -1,
+      "Ore": 2,
+      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
+      "Occupazione": "0001-01-01T00:00:00"
+    },
+    {
+      "Categoria": "Segreteria",
+      "Occupato": false,
+      "Lavoro": "isdhgvis",
+      "IdDatore": 2,
+      "IdRichiedente": -1,
+      "Ore": 1,
+      "Creazione": "2023-08-04T18:58:30.4717871+02:00",
+      "Occupazione": "0001-01-01T00:00:00"
+    }
+  ],
   "Soci": [
     {
       "Id": 0,
@@ -6,8 +88,7 @@
       "Nome": "Admin",
       "Telefono": "0000000000",
       "FaParteSegreteria": true,
-      "ore": 0,
-      "Pres": []
+      "ore": -5
     },
     {
       "Id": 1,
@@ -15,8 +96,7 @@
       "Nome": "Admin",
       "Telefono": "0000000000",
       "FaParteSegreteria": true,
-      "ore": 0,
-      "Pres": []
+      "ore": 3
     },
     {
       "Id": 2,
@@ -24,8 +104,15 @@
       "Nome": "Maria",
       "Telefono": "3249875517",
       "FaParteSegreteria": false,
-      "ore": 0,
-      "Pres": []
+      "ore": 2
+    },
+    {
+      "Id": 3,
+      "Cognome": "sofia",
+      "Nome": "mamma",
+      "Telefono": "3333333333",
+      "FaParteSegreteria": true,
+      "ore": 6
     }
   ],
   "CategoriePrestazioni": [

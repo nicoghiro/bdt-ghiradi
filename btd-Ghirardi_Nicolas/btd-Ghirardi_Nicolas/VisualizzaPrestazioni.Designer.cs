@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lstAttivita = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
+            this.cmbCategoriaFiltro = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbFiltro
@@ -44,6 +46,7 @@
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(121, 24);
             this.cmbFiltro.TabIndex = 0;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged_1);
             // 
             // label1
             // 
@@ -75,11 +78,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cmbCategoriaFiltro
+            // 
+            this.cmbCategoriaFiltro.FormattingEnabled = true;
+            this.cmbCategoriaFiltro.Items.AddRange(new object[] {
+            "Tutte le Categorie"});
+            this.cmbCategoriaFiltro.Location = new System.Drawing.Point(27, 121);
+            this.cmbCategoriaFiltro.Name = "cmbCategoriaFiltro";
+            this.cmbCategoriaFiltro.Size = new System.Drawing.Size(121, 24);
+            this.cmbCategoriaFiltro.TabIndex = 4;
+            this.cmbCategoriaFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbCategoriaFiltro_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 16);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Filtro Categoria";
+            // 
             // VisualizzaPrestazioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbCategoriaFiltro);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lstAttivita);
             this.Controls.Add(this.label1);
@@ -98,5 +123,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView lstAttivita;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbCategoriaFiltro;
+        private System.Windows.Forms.Label label2;
     }
 }

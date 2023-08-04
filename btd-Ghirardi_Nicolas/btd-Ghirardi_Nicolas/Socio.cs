@@ -17,7 +17,7 @@ namespace btd_Ghirardi_Nicolas
         public bool FaParteSegreteria { get; private set; }
         public int ore { get; private set; }
 
-        public List<Prestazioni> Pres { get; private set; }
+       
         
         public Socio(string cognome, string nome, string telefono, bool faParteSegreteria = false)
         {
@@ -26,7 +26,7 @@ namespace btd_Ghirardi_Nicolas
             Nome = nome;
             Telefono = telefono;
             FaParteSegreteria = faParteSegreteria;
-            Pres = new List<Prestazioni>();
+            
             ore = 0;
         }
 
@@ -37,19 +37,18 @@ namespace btd_Ghirardi_Nicolas
             Nome = nome;
             Telefono = telefono;
             FaParteSegreteria = faParteSegreteria;
-            Pres = new List<Prestazioni>();
+           
             this.ore = ore;
         }
 
         [JsonConstructor]
-        public Socio(int id, string cognome, string nome,List<string>categorie, int ore, string telefono, bool faParteSegreteria = false)
+        public Socio(int id, string cognome, string nome, int ore, string telefono, bool faParteSegreteria = false)
         {
             Id = NextId++;
             Cognome = cognome;
             Nome = nome;
             Telefono = telefono;
             FaParteSegreteria = faParteSegreteria;
-            Pres = new List<Prestazioni>();
             this.ore = ore;
           
             
@@ -80,12 +79,6 @@ namespace btd_Ghirardi_Nicolas
                 throw new Exception("Il numero di ore deve essere positivo");
             }
         }
-
-        public void AggiungiPrestazione(Prestazioni prestazione)
-        {
-            Pres.Add(prestazione);
-        }
-
         public override string ToString()
         {
             return Id + " " + Nome + " " + Cognome + " " + Telefono + " " + FaParteSegreteria;
@@ -94,6 +87,25 @@ namespace btd_Ghirardi_Nicolas
         public int CompareTo(Socio other)
         {
             return this.Id.CompareTo(other.Id);
+        }
+        public List<Prestazioni> GetPrestazioni(List<Prestazioni> allPrestazioni)
+        {
+
+            if (allPrestazioni == null)
+            {
+                return new List<Prestazioni>(); 
+            }
+
+            var attivitaAssociate = allPrestazioni.Where(p => p.IdDatore == Id);
+
+            if (attivitaAssociate.Any())
+            {
+                return attivitaAssociate.ToList();
+            }
+            else
+            {
+                return new List<Prestazioni>();
+            }
         }
     }
 }

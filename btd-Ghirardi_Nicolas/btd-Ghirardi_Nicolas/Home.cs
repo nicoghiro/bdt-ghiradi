@@ -12,10 +12,10 @@ using System.IO;
 
 namespace btd_Ghirardi_Nicolas
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
         BTD banca;
-        public Form1()
+        public Home()
         {
             InitializeComponent();
         }
@@ -42,12 +42,13 @@ namespace btd_Ghirardi_Nicolas
             listViewSoci.Columns.Add("ID", 0);
             listViewSoci.Columns.Add("Cognome", 100);
             listViewSoci.Columns.Add("Nome", 100);
-            listViewSoci.Columns.Add("Telefono", 100);
+            listViewSoci.Columns.Add("Telefono", 100); 
+            listViewSoci.Columns.Add("ore", 25);
             listViewSoci.Columns.Add("segreteria", 150);
-            listViewSoci.Columns.Add("segreteria", 150);
+           
             foreach (Socio socio in soci)
             {
-                ListViewItem item = new ListViewItem(new string[] {socio.Id.ToString(),socio.Cognome,socio.Nome,socio.Telefono,socio.FaParteSegreteria ? "Sì" : "No" ,socio.ore.ToString() });
+                ListViewItem item = new ListViewItem(new string[] {socio.Id.ToString(),socio.Cognome,socio.Nome,socio.Telefono,Convert.ToString(socio.ore),socio.FaParteSegreteria ? "Sì" : "No" ,socio.ore.ToString() });
                 item.Tag = socio;
                 listViewSoci.Items.Add(item);
             }
@@ -64,6 +65,7 @@ namespace btd_Ghirardi_Nicolas
                     modificaSoci.Show();
                     eliminaSocio.Show();
                     Categorie.Show();
+                    button1.Show();
                 }
                 else
                 {
@@ -71,6 +73,7 @@ namespace btd_Ghirardi_Nicolas
                     modificaSoci.Hide();
                     eliminaSocio.Hide();
                     Categorie.Hide();
+                    button1.Show();
                 }
             }
             else
@@ -79,6 +82,7 @@ namespace btd_Ghirardi_Nicolas
                 modificaSoci.Hide();
                 eliminaSocio.Hide();
                 Categorie.Hide();
+                button1.Hide();
             }
 
         }
@@ -187,6 +191,31 @@ namespace btd_Ghirardi_Nicolas
         {
             VisualizzaPrestazioni visualizzaPrestazioniForm = new VisualizzaPrestazioni(banca, GetSocioSelezionato());
             visualizzaPrestazioniForm.Show();
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filtro = cmbFiltro.Text;
+
+            if (filtro == "Tutti i Soci")
+            {
+                popola(banca.Soci);
+            }
+            else if (filtro == "Indebitati")
+            {
+                List<Socio> sociIndebitati = banca.Soci.Where(socio => socio.ore < 0).ToList();
+                popola(sociIndebitati);
+            }
+            else if (filtro == "Num. ore decrescente")
+            {
+                List<Socio> sociOrdinatiPerOreDecrescente = banca.Soci.OrderByDescending(socio => socio.ore).ToList();
+                popola(sociOrdinatiPerOreDecrescente);
+            }
+            else if (filtro == "Num. ore crescente")
+            {
+                List<Socio> sociOrdinatiPerOreCrescente = banca.Soci.OrderBy(socio => socio.ore).ToList();
+                popola(sociOrdinatiPerOreCrescente);
+            }
         }
     }
 }

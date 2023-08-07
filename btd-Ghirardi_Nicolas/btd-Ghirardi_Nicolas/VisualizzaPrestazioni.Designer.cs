@@ -42,6 +42,7 @@
             // 
             this.cmbFiltro.FormattingEnabled = true;
             this.cmbFiltro.Items.AddRange(new object[] {
+            "Tutte le Prestazioni",
             "Non Occupate",
             "Per Ore (decrescente)"});
             this.cmbFiltro.Location = new System.Drawing.Point(27, 65);

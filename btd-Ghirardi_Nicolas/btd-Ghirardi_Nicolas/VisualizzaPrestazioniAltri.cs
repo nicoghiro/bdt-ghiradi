@@ -21,7 +21,7 @@ namespace btd_Ghirardi_Nicolas
             this.banca = banca;
             this.utenteSelezionato = utenteSelezionato;
             InitializeListViewColumns();
-            PopolaPrestazioniFiltrate(banca.Pres);
+           
         }
 
         private void VisualizzaPrestazioniAltri_Load(object sender, EventArgs e)
@@ -30,6 +30,8 @@ namespace btd_Ghirardi_Nicolas
             cmbFiltro.SelectedIndex = 0;
             cmbCategoriaFiltro.Items.AddRange(banca.CategoriePrestazioni.ToArray());
             cmbCategoriaFiltro.SelectedItem = "Tutte le Categorie";
+            cmbFiltro.SelectedItem = "Tutte le Prestazioni";
+            PopolaPrestazioniFiltrate(banca.Pres);
         }
 
         private void InitializeListViewColumns()
@@ -47,7 +49,7 @@ namespace btd_Ghirardi_Nicolas
 
             foreach (Prestazioni prestazione in prestazioni)
             {
-                if (prestazione.IdDatore != utenteSelezionato.Id && prestazione.IdRichiedente != utenteSelezionato.Id)
+                if (prestazione.IdDatore != utenteSelezionato.Id)
                 {
                     string nomeRichiedente = NomeRichiedente(prestazione);
                     string nomeDatore = NomeDatore(prestazione);
@@ -72,40 +74,8 @@ namespace btd_Ghirardi_Nicolas
             Socio datore = banca.Soci.FirstOrDefault(s => s.Id == prestazione.IdDatore);
             return datore != null ? $"{datore.Cognome} {datore.Nome}" : "N/A";
         }
-        private void cmbFiltro_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            string filtro = cmbFiltro.Text;
 
-            if (filtro == "Non Occupate")
-            {
-                List<Prestazioni> prestazioniNonOccupate = banca.Pres.Where(p => !p.Occupato).ToList();
-                PopolaPrestazioniFiltrate(prestazioniNonOccupate);
-            }
-            else if (filtro == "Per Ore (decrescente)")
-            {
-                List<Prestazioni> prestazioniOrdinatePerOre = banca.Pres.OrderByDescending(p => p.Ore).ToList();
-                PopolaPrestazioniFiltrate(prestazioniOrdinatePerOre);
-            }
-            else
-            {
-                PopolaPrestazioniFiltrate(banca.Pres);
-            }
-        }
-
-        private void cmbCategoriaFiltro_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            string categoriaFiltro = cmbCategoriaFiltro.Text;
-
-            if (categoriaFiltro == "Tutte le Categorie")
-            {
-                PopolaPrestazioniFiltrate(banca.Pres);
-            }
-            else
-            {
-                List<Prestazioni> prestazioniPerCategoria = banca.Pres.Where(p => p.Categoria == categoriaFiltro).ToList();
-                PopolaPrestazioniFiltrate(prestazioniPerCategoria);
-            }
-        }
+    
 
         private void btnOccupare_Click(object sender, EventArgs e)
         {
@@ -118,13 +88,14 @@ namespace btd_Ghirardi_Nicolas
                 {
                     Socio socioRichiedente = utenteSelezionato;
 
-                    if (socioRichiedente != null && socioRichiedente.ore >= prestazioneSelezionata.Ore && socioRichiedente.ore >= -25)
+                    if (socioRichiedente != null  && socioRichiedente.ore-prestazioneSelezionata.Ore >= -25)
                     {
                         try
                         {
                             banca.Occupaprestazione(prestazioneSelezionata, socioRichiedente);
                             PopolaPrestazioniFiltrate(banca.Pres);
-                            
+                           
+
                         }
                         catch (InvalidOperationException ex)
                         {
@@ -145,6 +116,50 @@ namespace btd_Ghirardi_Nicolas
             {
                 MessageBox.Show("Seleziona un'attività da occupare.", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void ApplyFilters()
+        {
+            string filtro = cmbFiltro.Text;
+            string categoriaFiltro = cmbCategoriaFiltro.Text;
+
+            List<Prestazioni> prestazioniFiltrate = banca.Pres;
+
+            if (filtro == "Tutte le Prestazioni")
+            {
+                
+            }
+            else if (filtro == "Non Occupate")
+            {
+                prestazioniFiltrate = prestazioniFiltrate.Where(p => !p.Occupato).ToList();
+            }
+            else if (filtro == "Per Ore (decrescente)")
+            {
+                prestazioniFiltrate = prestazioniFiltrate.OrderByDescending(p => p.Ore).ToList();
+            }
+
+            if (categoriaFiltro != "Tutte le Categorie")
+            {
+                prestazioniFiltrate = prestazioniFiltrate.Where(p => p.Categoria == categoriaFiltro).ToList();
+            }
+
+            PopolaPrestazioniFiltrate(prestazioniFiltrate);
+        }
+
+        private void cmbFiltro_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void cmbCategoriaFiltro_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+
+        private void VisualizzaPrestazioniAltri_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            DialogResult = DialogResult.OK;
         }
     }
 

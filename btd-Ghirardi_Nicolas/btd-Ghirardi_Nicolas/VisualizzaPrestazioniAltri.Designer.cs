@@ -80,6 +80,7 @@
             // 
             this.cmbFiltro.FormattingEnabled = true;
             this.cmbFiltro.Items.AddRange(new object[] {
+            "Tutte le Prestazioni",
             "Non Occupate",
             "Per Ore (decrescente)"});
             this.cmbFiltro.Location = new System.Drawing.Point(38, 82);
@@ -111,6 +112,7 @@
             this.Controls.Add(this.lstPrestazioniAltri);
             this.Name = "VisualizzaPrestazioniAltri";
             this.Text = "VisualizzaPrestazioniAltri";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VisualizzaPrestazioniAltri_FormClosing);
             this.Load += new System.EventHandler(this.VisualizzaPrestazioniAltri_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

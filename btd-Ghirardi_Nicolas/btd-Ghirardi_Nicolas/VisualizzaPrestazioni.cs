@@ -31,6 +31,7 @@ namespace btd_Ghirardi_Nicolas
             cmbFiltro.SelectedIndex = 0;
             cmbCategoriaFiltro.Items.AddRange(banca.CategoriePrestazioni.ToArray());
             cmbCategoriaFiltro.SelectedItem = "Tutte le Categorie";
+            cmbFiltro.SelectedItem = "Tutte le Prestazioni";
         }
 
         private void InitializeListViewColumns()
@@ -69,40 +70,9 @@ namespace btd_Ghirardi_Nicolas
             }
         }
 
-        private void cmbFiltro_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            string filtro = cmbFiltro.Text;
+        
 
-            if (filtro == "Non Occupate")
-            {
-                List<Prestazioni> attivitaNonOccupate = socio.GetPrestazioni(banca.Pres).Where(p => !p.Occupato).ToList();
-                PopulateAttivita(attivitaNonOccupate);
-            }
-            else if (filtro == "Per Ore (decrescente)")
-            {
-                List<Prestazioni> attivitaOrdinatePerOre = socio.GetPrestazioni(banca.Pres).OrderByDescending(p => p.Ore).ToList();
-                PopulateAttivita(attivitaOrdinatePerOre);
-            }
-            else
-            {
-                PopulateAttivita(socio.GetPrestazioni(banca.Pres));
-            }
-        }
-
-        private void cmbCategoriaFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string categoriaFiltro = cmbCategoriaFiltro.Text;
-
-            if (categoriaFiltro == "Tutte le Categorie")
-            {
-                PopulateAttivita(socio.GetPrestazioni(banca.Pres));
-            }
-            else
-            {
-                List<Prestazioni> attivitaPerCategoria = socio.GetPrestazioni(banca.Pres).Where(p => p.Categoria == categoriaFiltro).ToList();
-                PopulateAttivita(attivitaPerCategoria);
-            }
-        }
+       
 
         private void btnEliminaPrestazione_Click(object sender, EventArgs e)
         {
@@ -132,6 +102,40 @@ namespace btd_Ghirardi_Nicolas
                 MessageBox.Show("Seleziona una prestazione da eliminare.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        private void ApplyFilters()
+        {
+            string filtro = cmbFiltro.Text;
+            string categoriaFiltro = cmbCategoriaFiltro.Text;
+
+            List<Prestazioni> attivitaFiltrate = socio.GetPrestazioni(banca.Pres);
+
+            if (filtro == "Non Occupate")
+            {
+                attivitaFiltrate = attivitaFiltrate.Where(p => !p.Occupato).ToList();
+            }
+            else if (filtro == "Per Ore (decrescente)")
+            {
+                attivitaFiltrate = attivitaFiltrate.OrderByDescending(p => p.Ore).ToList();
+            }
+
+            if (categoriaFiltro != "Tutte le Categorie")
+            {
+                attivitaFiltrate = attivitaFiltrate.Where(p => p.Categoria == categoriaFiltro).ToList();
+            }
+
+            PopulateAttivita(attivitaFiltrate);
+        }
+
+        private void cmbFiltro_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void cmbCategoriaFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
 
         private void btnModifica_Click(object sender, EventArgs e)
         {

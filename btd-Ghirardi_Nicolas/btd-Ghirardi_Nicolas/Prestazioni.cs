@@ -29,14 +29,15 @@ public class Prestazioni
         Creazione = DateTime.Now;
     }
     [JsonConstructor]
-    public Prestazioni(int id, string categoria, string lavoro, int idDatore, int ore)
+    public Prestazioni(int id, string categoria, string lavoro, int idDatore, int ore, bool occupato, int idRichiedente)
     {
+        
         Id = NextId++;
         Categoria = categoria;
-        Occupato = false;
+        Occupato = occupato;
         Lavoro = lavoro;
         IdDatore = idDatore;
-        IdRichiedente = -1; // Nessun richiedente inizialmente
+        IdRichiedente = idRichiedente;
         Ore = ore;
         Creazione = DateTime.Now;
     }

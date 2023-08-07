@@ -43,7 +43,7 @@ namespace btd_Ghirardi_Nicolas
             listViewSoci.Columns.Add("Cognome", 100);
             listViewSoci.Columns.Add("Nome", 100);
             listViewSoci.Columns.Add("Telefono", 100); 
-            listViewSoci.Columns.Add("ore", 25);
+            listViewSoci.Columns.Add("ore", 40);
             listViewSoci.Columns.Add("segreteria", 150);
            
             foreach (Socio socio in soci)
@@ -229,6 +229,10 @@ namespace btd_Ghirardi_Nicolas
             {
                 VisualizzaPrestazioniAltri visualizzaPrestazioniAltriForm = new VisualizzaPrestazioniAltri(banca, utenteSelezionato);
                 visualizzaPrestazioniAltriForm.ShowDialog();
+                if (visualizzaPrestazioniAltriForm.ShowDialog() == DialogResult.OK)
+                {
+                    popola(banca.Soci);
+                }
             }
             else
             {

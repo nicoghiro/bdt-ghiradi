@@ -13,6 +13,7 @@ namespace btd_Ghirardi_Nicolas
     [JsonObject]
     public class BTD
     {
+        public int ZonaDefaultId { get; set; }
         public List<Prestazioni> Pres { get; private set; }
         public List<Socio> Soci { get; private set; }
         public List<string> CategoriePrestazioni { get; private set; }

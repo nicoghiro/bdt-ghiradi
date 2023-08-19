@@ -133,6 +133,7 @@ namespace btd_Ghirardi_Nicolas
                 MessageBox.Show("Errore durante il salvataggio dei dati: " + ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnAggiungiSocio_Click_1(object sender, EventArgs e)
         {
             using (FormAggiungiSocio formAggiungiSocio = new FormAggiungiSocio())
@@ -200,6 +201,7 @@ namespace btd_Ghirardi_Nicolas
         {
             string filtro = cmbFiltro.Text;
 
+
             if (filtro == "Tutti i Soci")
             {
                 popola(banca.Soci);
@@ -218,6 +220,11 @@ namespace btd_Ghirardi_Nicolas
             {
                 List<Socio> sociOrdinatiPerOreCrescente = banca.Soci.OrderBy(socio => socio.ore).ToList();
                 popola(sociOrdinatiPerOreCrescente);
+            }
+            else if (filtro == "Segretari")
+            {
+                List<Socio> sociSegreteria = banca.Soci.Where(socio =>socio.FaParteSegreteria==true).ToList();
+                popola(sociSegreteria);
             }
         }
 

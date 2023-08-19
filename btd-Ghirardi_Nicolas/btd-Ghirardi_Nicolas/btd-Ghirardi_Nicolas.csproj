@@ -108,6 +108,7 @@
     <Compile Include="VisualizzaPrestazioniAltri.Designer.cs">
       <DependentUpon>VisualizzaPrestazioniAltri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zona.cs" />
     <EmbeddedResource Include="AggiungiPrestazione.resx">
       <DependentUpon>AggiungiPrestazione.cs</DependentUpon>
     </EmbeddedResource>

@@ -16,9 +16,11 @@ namespace btd_Ghirardi_Nicolas
         public string Telefono { get; private set; }
         public bool FaParteSegreteria { get; private set; }
         public int ore { get; private set; }
+        [JsonIgnore] 
+        public Zona Zona { get; set; }
 
-       
-        
+
+
         public Socio(string cognome, string nome, string telefono, bool faParteSegreteria = false)
         {
             Id = NextId++;

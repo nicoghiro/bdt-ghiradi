@@ -45,10 +45,11 @@ namespace btd_Ghirardi_Nicolas
             listViewSoci.Columns.Add("Telefono", 100); 
             listViewSoci.Columns.Add("ore", 40);
             listViewSoci.Columns.Add("segreteria", 150);
+            listViewSoci.Columns.Add("zona", 150);
            
             foreach (Socio socio in soci)
             {
-                ListViewItem item = new ListViewItem(new string[] {socio.Id.ToString(),socio.Cognome,socio.Nome,socio.Telefono,Convert.ToString(socio.ore),socio.FaParteSegreteria ? "Sì" : "No" ,socio.ore.ToString() });
+                ListViewItem item = new ListViewItem(new string[] {socio.Id.ToString(),socio.Cognome,socio.Nome,socio.Telefono,Convert.ToString(socio.ore),socio.FaParteSegreteria ? "Sì" : "No" ,socio.Zona });
                 item.Tag = socio;
                 listViewSoci.Items.Add(item);
             }
@@ -67,9 +68,11 @@ namespace btd_Ghirardi_Nicolas
                     Categorie.Show();
                     button1.Show();
                     btnPrestazioniAltri.Show();
+                    GestZone.Show();
                 }
                 else
                 {
+                    GestZone.Hide();
                     btnAggiungiSocio.Hide();
                     modificaSoci.Hide();
                     eliminaSocio.Hide();
@@ -80,6 +83,7 @@ namespace btd_Ghirardi_Nicolas
             }
             else
             {
+                GestZone.Hide();
                 btnAggiungiSocio.Hide();
                 modificaSoci.Hide();
                 eliminaSocio.Hide();
@@ -136,7 +140,7 @@ namespace btd_Ghirardi_Nicolas
 
         private void btnAggiungiSocio_Click_1(object sender, EventArgs e)
         {
-            using (FormAggiungiSocio formAggiungiSocio = new FormAggiungiSocio())
+            using (FormAggiungiSocio formAggiungiSocio = new FormAggiungiSocio(banca))
             {
                 if (formAggiungiSocio.ShowDialog() == DialogResult.OK)
                 {
@@ -150,7 +154,7 @@ namespace btd_Ghirardi_Nicolas
 
         private void modificaSoci_Click(object sender, EventArgs e)
         {
-            using (FormModificaSocio formModifica = new FormModificaSocio(banca.Soci))
+            using (FormModificaSocio formModifica = new FormModificaSocio(banca.Soci,banca))
             {
                 if (formModifica.ShowDialog() == DialogResult.OK)
                 {
@@ -245,6 +249,12 @@ namespace btd_Ghirardi_Nicolas
             {
                 MessageBox.Show("Seleziona un utente per visualizzare le sue prestazioni.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void GestZone_Click(object sender, EventArgs e)
+        {
+            Zone zone=new Zone(banca);
+            zone.ShowDialog();  
         }
     }
 }

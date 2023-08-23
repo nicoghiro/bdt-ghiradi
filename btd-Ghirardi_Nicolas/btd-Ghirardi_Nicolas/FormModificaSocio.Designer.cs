@@ -40,6 +40,8 @@
             this.btnAnnulla = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numOre = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.cmbZona = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(70, 107);
+            this.txtNome.Location = new System.Drawing.Point(70, 96);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(139, 22);
             this.txtNome.TabIndex = 2;
@@ -65,7 +67,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 88);
+            this.label1.Location = new System.Drawing.Point(67, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 3;
@@ -73,7 +75,7 @@
             // 
             // txtCognome
             // 
-            this.txtCognome.Location = new System.Drawing.Point(70, 165);
+            this.txtCognome.Location = new System.Drawing.Point(70, 154);
             this.txtCognome.Name = "txtCognome";
             this.txtCognome.Size = new System.Drawing.Size(139, 22);
             this.txtCognome.TabIndex = 4;
@@ -81,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 146);
+            this.label2.Location = new System.Drawing.Point(67, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 16);
             this.label2.TabIndex = 5;
@@ -90,7 +92,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 202);
+            this.label3.Location = new System.Drawing.Point(67, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 16);
             this.label3.TabIndex = 6;
@@ -98,7 +100,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(70, 221);
+            this.txtTelefono.Location = new System.Drawing.Point(70, 210);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(139, 22);
             this.txtTelefono.TabIndex = 7;
@@ -106,7 +108,7 @@
             // chkSegreteria
             // 
             this.chkSegreteria.AutoSize = true;
-            this.chkSegreteria.Location = new System.Drawing.Point(70, 302);
+            this.chkSegreteria.Location = new System.Drawing.Point(70, 348);
             this.chkSegreteria.Name = "chkSegreteria";
             this.chkSegreteria.Size = new System.Drawing.Size(92, 20);
             this.chkSegreteria.TabIndex = 8;
@@ -115,7 +117,7 @@
             // 
             // btnConferma
             // 
-            this.btnConferma.Location = new System.Drawing.Point(70, 340);
+            this.btnConferma.Location = new System.Drawing.Point(70, 386);
             this.btnConferma.Name = "btnConferma";
             this.btnConferma.Size = new System.Drawing.Size(75, 23);
             this.btnConferma.TabIndex = 9;
@@ -125,7 +127,7 @@
             // 
             // btnAnnulla
             // 
-            this.btnAnnulla.Location = new System.Drawing.Point(151, 340);
+            this.btnAnnulla.Location = new System.Drawing.Point(151, 386);
             this.btnAnnulla.Name = "btnAnnulla";
             this.btnAnnulla.Size = new System.Drawing.Size(75, 23);
             this.btnAnnulla.TabIndex = 10;
@@ -135,7 +137,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(70, 274);
+            this.numericUpDown1.Location = new System.Drawing.Point(70, 263);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             100,
             0,
@@ -148,17 +150,36 @@
             // numOre
             // 
             this.numOre.AutoSize = true;
-            this.numOre.Location = new System.Drawing.Point(67, 255);
+            this.numOre.Location = new System.Drawing.Point(67, 244);
             this.numOre.Name = "numOre";
             this.numOre.Size = new System.Drawing.Size(29, 16);
             this.numOre.TabIndex = 12;
             this.numOre.Text = "Ore";
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(67, 299);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(38, 16);
+            this.label.TabIndex = 14;
+            this.label.Text = "Zona";
+            // 
+            // cmbZona
+            // 
+            this.cmbZona.FormattingEnabled = true;
+            this.cmbZona.Location = new System.Drawing.Point(70, 318);
+            this.cmbZona.Name = "cmbZona";
+            this.cmbZona.Size = new System.Drawing.Size(121, 24);
+            this.cmbZona.TabIndex = 13;
             // 
             // FormModificaSocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 445);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.cmbZona);
             this.Controls.Add(this.numOre);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnAnnulla);
@@ -194,5 +215,7 @@
         private System.Windows.Forms.Button btnAnnulla;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label numOre;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.ComboBox cmbZona;
     }
 }

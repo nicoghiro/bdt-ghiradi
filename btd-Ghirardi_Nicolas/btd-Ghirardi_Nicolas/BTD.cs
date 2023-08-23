@@ -13,10 +13,11 @@ namespace btd_Ghirardi_Nicolas
     [JsonObject]
     public class BTD
     {
-        public int ZonaDefaultId { get; set; }
+   
         public List<Prestazioni> Pres { get; private set; }
         public List<Socio> Soci { get; private set; }
         public List<string> CategoriePrestazioni { get; private set; }
+        public List<string> zone { get; private set; }
 
         [JsonConstructor]
         public BTD()
@@ -24,8 +25,21 @@ namespace btd_Ghirardi_Nicolas
             Soci = new List<Socio>();
             CategoriePrestazioni = new List<string>();
             Pres = new List<Prestazioni>();
+            zone = new List<string>();
+            
+            
         }
-
+        public void Contiene(string nuova)
+        {
+            if(nuova != null)
+            {
+                if (zone.Contains(nuova))
+                {
+                    throw new Exception("Questa zona è gia presente");
+                }
+            }
+           
+        }
         public List<Socio> Indebitati()
         {
             List<Socio> indebit = new List<Socio>();

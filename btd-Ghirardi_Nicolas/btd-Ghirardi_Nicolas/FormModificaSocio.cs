@@ -18,11 +18,20 @@ namespace btd_Ghirardi_Nicolas
             InitializeComponent();
         }
         List<Socio> soci;
-        public FormModificaSocio(List<Socio> soci) 
+        public FormModificaSocio(List<Socio> soci,BTD banca) 
         {
             InitializeComponent();
             this.soci = soci;
+            popola(banca.zone);
+           
         }
+        public void popola(List<string> zone)
+        {
+            cmbZona.Items.Clear();
+            cmbZona.Items.AddRange(zone.ToArray());
+            cmbZona.SelectedIndex = 0;
+        }
+
         private Socio GetSocioSelezionato()
         {
             if (listViewSoci.SelectedItems.Count > 0)
@@ -45,10 +54,11 @@ namespace btd_Ghirardi_Nicolas
             listViewSoci.Columns.Add("Nome", 100);
             listViewSoci.Columns.Add("Telefono", 100);
             listViewSoci.Columns.Add("segreteria", 150);
-            listViewSoci.Columns.Add("ore", 150);
+            listViewSoci.Columns.Add("ore", 40);
+            listViewSoci.Columns.Add("zona", 150);
             foreach (Socio socio in soci)
             {
-                ListViewItem item = new ListViewItem(new string[] { socio.Id.ToString(), socio.Cognome, socio.Nome, socio.Telefono, socio.FaParteSegreteria ? "Sì" : "No", socio.ore.ToString() });
+                ListViewItem item = new ListViewItem(new string[] { socio.Id.ToString(), socio.Cognome, socio.Nome, socio.Telefono, socio.FaParteSegreteria ? "Sì" : "No", socio.ore.ToString(),socio.Zona });
                 item.Tag = socio;
                 listViewSoci.Items.Add(item);
             }
@@ -66,9 +76,10 @@ namespace btd_Ghirardi_Nicolas
             string telefono = txtTelefono.Text;
             bool faParteSegreteria = chkSegreteria.Checked;
             int numOre = Convert.ToInt32(numericUpDown1.Value);
+            string zona=cmbZona.Text;
 
             
-            Socio nuovoSocio = new Socio(id,cognome, nome, telefono, numOre,faParteSegreteria);
+            Socio nuovoSocio = new Socio(id,cognome, nome, telefono, numOre,zona,faParteSegreteria);
 
           
             return nuovoSocio;
@@ -86,6 +97,7 @@ namespace btd_Ghirardi_Nicolas
                     txtTelefono.Text = selezionato.Telefono;
                     chkSegreteria.Checked = selezionato.FaParteSegreteria;
                     numericUpDown1.Value = selezionato.ore;
+                    cmbZona.Text = selezionato.Zona;
                 }
                 else
                 {

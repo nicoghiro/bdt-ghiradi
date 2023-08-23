@@ -108,7 +108,12 @@
     <Compile Include="VisualizzaPrestazioniAltri.Designer.cs">
       <DependentUpon>VisualizzaPrestazioniAltri.cs</DependentUpon>
     </Compile>
-    <Compile Include="Zona.cs" />
+    <Compile Include="Zone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zone.Designer.cs">
+      <DependentUpon>Zone.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AggiungiPrestazione.resx">
       <DependentUpon>AggiungiPrestazione.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VisualizzaPrestazioniAltri.resx">
       <DependentUpon>VisualizzaPrestazioniAltri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zone.resx">
+      <DependentUpon>Zone.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

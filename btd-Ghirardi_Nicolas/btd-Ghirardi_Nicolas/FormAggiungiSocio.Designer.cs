@@ -37,6 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbZona = new System.Windows.Forms.ComboBox();
+            this.label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNome
@@ -72,7 +74,7 @@
             // 
             // btnConferma
             // 
-            this.btnConferma.Location = new System.Drawing.Point(310, 80);
+            this.btnConferma.Location = new System.Drawing.Point(354, 79);
             this.btnConferma.Name = "btnConferma";
             this.btnConferma.Size = new System.Drawing.Size(75, 23);
             this.btnConferma.TabIndex = 4;
@@ -82,7 +84,7 @@
             // 
             // btnAnnulla
             // 
-            this.btnAnnulla.Location = new System.Drawing.Point(310, 135);
+            this.btnAnnulla.Location = new System.Drawing.Point(354, 126);
             this.btnAnnulla.Name = "btnAnnulla";
             this.btnAnnulla.Size = new System.Drawing.Size(75, 23);
             this.btnAnnulla.TabIndex = 5;
@@ -118,9 +120,29 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Numero";
             // 
+            // cmbZona
+            // 
+            this.cmbZona.FormattingEnabled = true;
+            this.cmbZona.Location = new System.Drawing.Point(211, 80);
+            this.cmbZona.Name = "cmbZona";
+            this.cmbZona.Size = new System.Drawing.Size(121, 24);
+            this.cmbZona.TabIndex = 9;
+            this.cmbZona.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(208, 61);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(38, 16);
+            this.label.TabIndex = 10;
+            this.label.Text = "Zona";
+            // 
             // FormAggiungiSocio
             // 
             this.ClientSize = new System.Drawing.Size(499, 295);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.cmbZona);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -131,6 +153,7 @@
             this.Controls.Add(this.txtCognome);
             this.Controls.Add(this.txtNome);
             this.Name = "FormAggiungiSocio";
+            this.Load += new System.EventHandler(this.FormAggiungiSocio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +170,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbZona;
+        private System.Windows.Forms.Label label;
     }
 }

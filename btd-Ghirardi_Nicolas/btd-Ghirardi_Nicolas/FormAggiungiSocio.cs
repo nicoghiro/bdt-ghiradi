@@ -12,18 +12,22 @@ namespace btd_Ghirardi_Nicolas
 {
     public partial class FormAggiungiSocio : Form
     {
-        public FormAggiungiSocio()
+        public FormAggiungiSocio(BTD banca)
         {
             InitializeComponent();
+            popola(banca.zone);
         }
-
+        public void popola (List<string> zone)
+        {
+            cmbZona.Items.Clear();
+            cmbZona.Items.AddRange(zone.ToArray());
+            cmbZona.SelectedIndex = 0;
+        }
 
         private bool VerificaCampi()
         {
 
-            if (string.IsNullOrWhiteSpace(txtCognome.Text) ||
-                string.IsNullOrWhiteSpace(txtNome.Text) ||
-                string.IsNullOrWhiteSpace(txtTelefono.Text))
+            if (string.IsNullOrWhiteSpace(txtCognome.Text) ||  string.IsNullOrWhiteSpace(txtNome.Text) ||  string.IsNullOrWhiteSpace(txtTelefono.Text))
             {
                 MessageBox.Show("Completa tutti i campi prima di confermare.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -53,8 +57,9 @@ namespace btd_Ghirardi_Nicolas
             string nome = txtNome.Text;
             string telefono = txtTelefono.Text;
             bool faParteSegreteria = chkSegreteria.Checked;
+            string zona =cmbZona.Text;
 
-            Socio nuovoSocio = new Socio(cognome, nome, telefono, faParteSegreteria);
+            Socio nuovoSocio = new Socio(cognome, nome, telefono,zona, faParteSegreteria);
             return nuovoSocio;
         }
         private void btnAnnulla_Click_1(object sender, EventArgs e)
@@ -73,6 +78,16 @@ namespace btd_Ghirardi_Nicolas
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormAggiungiSocio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

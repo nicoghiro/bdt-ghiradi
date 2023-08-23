@@ -16,35 +16,34 @@ namespace btd_Ghirardi_Nicolas
         public string Telefono { get; private set; }
         public bool FaParteSegreteria { get; private set; }
         public int ore { get; private set; }
-        [JsonIgnore] 
-        public Zona Zona { get; set; }
+        public string Zona { get; set; }
 
 
 
-        public Socio(string cognome, string nome, string telefono, bool faParteSegreteria = false)
+        public Socio(string cognome, string nome, string telefono, string zona,bool faParteSegreteria = false )
         {
             Id = NextId++;
             Cognome = cognome;
             Nome = nome;
             Telefono = telefono;
             FaParteSegreteria = faParteSegreteria;
-            
+            Zona = zona;     
             ore = 0;
         }
 
-        public Socio(int id, string cognome, string nome, string telefono, int ore, bool faParteSegreteria = false)
+        public Socio(int id, string cognome, string nome, string telefono, int ore,string zona, bool faParteSegreteria = false)
         {
             Id = id;
             Cognome = cognome;
             Nome = nome;
             Telefono = telefono;
             FaParteSegreteria = faParteSegreteria;
-           
+            Zona = zona;
             this.ore = ore;
         }
 
         [JsonConstructor]
-        public Socio(int id, string cognome, string nome, int ore, string telefono, bool faParteSegreteria = false)
+        public Socio(int id, string cognome, string nome, int ore, string telefono,string zona, bool faParteSegreteria = false)
         {
             Id = NextId++;
             Cognome = cognome;
@@ -52,8 +51,9 @@ namespace btd_Ghirardi_Nicolas
             Telefono = telefono;
             FaParteSegreteria = faParteSegreteria;
             this.ore = ore;
-          
-            
+            Zona = zona;
+
+
 
         }
        

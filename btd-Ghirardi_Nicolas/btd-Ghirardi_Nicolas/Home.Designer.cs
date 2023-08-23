@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.btnPrestazioniAltri = new System.Windows.Forms.Button();
+            this.GestZone = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewSoci
@@ -141,11 +142,23 @@
             this.btnPrestazioniAltri.Visible = false;
             this.btnPrestazioniAltri.Click += new System.EventHandler(this.btnPrestazioniAltri_Click);
             // 
+            // GestZone
+            // 
+            this.GestZone.Location = new System.Drawing.Point(69, 327);
+            this.GestZone.Name = "GestZone";
+            this.GestZone.Size = new System.Drawing.Size(127, 35);
+            this.GestZone.TabIndex = 9;
+            this.GestZone.Text = "Gest. zone";
+            this.GestZone.UseVisualStyleBackColor = true;
+            this.GestZone.Visible = false;
+            this.GestZone.Click += new System.EventHandler(this.GestZone_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 485);
+            this.Controls.Add(this.GestZone);
             this.Controls.Add(this.btnPrestazioniAltri);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbFiltro);
@@ -177,6 +190,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.Button btnPrestazioniAltri;
+        private System.Windows.Forms.Button GestZone;
     }
 }
 

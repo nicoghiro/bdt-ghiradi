@@ -50,7 +50,7 @@ namespace btd_Ghirardi_Nicolas
             {
                 if (selezionato.FaParteSegreteria || !categoria.Contains("Segreteria"))
                 {
-                    banca.AggiungiPrestazione(categoria, descrizione, selezionato.Id, ore);
+                    banca.AggiungiPrestazione(categoria, descrizione, selezionato.Id, ore,selezionato.Zona);
 
                     MessageBox.Show("Prestazione aggiunta con successo!", "Successo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DialogResult = DialogResult.OK;

@@ -33,8 +33,19 @@ namespace btd_Ghirardi_Nicolas
             CaricaDatiDaFile("dati.json");
             popola(banca.Soci);
             listViewSoci.FullRowSelect = true;
-            
-          
+            inizializeZone(banca.zone);
+            cmbFiltro.Text = "Tutti i Soci";
+            filtra();
+
+
+
+        }
+        public void inizializeZone(List<string> zone)
+        {
+            cmbzona.Items.Clear();
+            cmbzona.Items.Add("Tutte le zone");
+            cmbzona.Items.AddRange(zone.ToArray());
+            cmbzona.SelectedIndex = 0;
         }
         public void popola(List<Socio> soci)
         {
@@ -203,33 +214,46 @@ namespace btd_Ghirardi_Nicolas
 
         private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
+            filtra();
+        }
+        private void filtra()
+        {
             string filtro = cmbFiltro.Text;
-
+            List<Socio> filtrati = new List<Socio>();
+            filtrati = banca.Soci;
+           
 
             if (filtro == "Tutti i Soci")
             {
-                popola(banca.Soci);
+                filtrati = banca.Soci;
             }
             else if (filtro == "Indebitati")
             {
-                List<Socio> sociIndebitati = banca.Soci.Where(socio => socio.ore < 0).ToList();
-                popola(sociIndebitati);
+                filtrati = banca.Soci.Where(socio => socio.ore < 0).ToList();
+
             }
             else if (filtro == "Num. ore decrescente")
             {
-                List<Socio> sociOrdinatiPerOreDecrescente = banca.Soci.OrderByDescending(socio => socio.ore).ToList();
-                popola(sociOrdinatiPerOreDecrescente);
+                filtrati = banca.Soci.OrderByDescending(socio => socio.ore).ToList();
+
             }
             else if (filtro == "Num. ore crescente")
             {
-                List<Socio> sociOrdinatiPerOreCrescente = banca.Soci.OrderBy(socio => socio.ore).ToList();
-                popola(sociOrdinatiPerOreCrescente);
+                filtrati = banca.Soci.OrderBy(socio => socio.ore).ToList();
+
             }
             else if (filtro == "Segretari")
             {
-                List<Socio> sociSegreteria = banca.Soci.Where(socio =>socio.FaParteSegreteria==true).ToList();
-                popola(sociSegreteria);
+                filtrati = banca.Soci.Where(socio => socio.FaParteSegreteria == true).ToList();
+
             }
+            if (cmbzona.Text != "Tutte le zone")
+            { 
+                filtrati = filtrati.Where(socio => socio.Zona == cmbzona.Text).ToList();
+            }
+           
+            
+            popola(filtrati);
         }
 
         private void btnPrestazioniAltri_Click(object sender, EventArgs e)
@@ -255,6 +279,11 @@ namespace btd_Ghirardi_Nicolas
         {
             Zone zone=new Zone(banca);
             zone.ShowDialog();  
+        }
+
+        private void cmbzona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filtra();
         }
     }
 }

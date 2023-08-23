@@ -50,7 +50,7 @@ namespace btd_Ghirardi_Nicolas
                 if (prestazioneDaModificare.Categoria != nuovaCategoria)
                 {
                     banca.EliminaPrestazione(prestazioneDaModificare.IdDatore);
-                    banca.AggiungiPrestazione(nuovaCategoria, nuovoLavoro, prestazioneDaModificare.IdDatore, nuoveOre);
+                    banca.AggiungiPrestazione(nuovaCategoria, nuovoLavoro, prestazioneDaModificare.IdDatore, nuoveOre,socio.Zona);
                 }
                 else
                 {

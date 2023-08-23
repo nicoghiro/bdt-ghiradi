@@ -103,9 +103,9 @@ namespace btd_Ghirardi_Nicolas
                 socio.DiminuisciOre(ore);
             }
         }
-        public void AggiungiPrestazione(string categoria, string lavoro, int idDatore, int ore)
+        public void AggiungiPrestazione(string categoria, string lavoro, int idDatore, int ore,string zone)
         {
-            Prestazioni nuovaPrestazione = new Prestazioni(categoria, lavoro, idDatore, ore);
+            Prestazioni nuovaPrestazione = new Prestazioni(categoria, lavoro, idDatore, ore,zone);
             Pres.Add(nuovaPrestazione);
         }
 

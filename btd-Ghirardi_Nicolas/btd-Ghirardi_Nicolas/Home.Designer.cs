@@ -38,6 +38,8 @@
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.btnPrestazioniAltri = new System.Windows.Forms.Button();
             this.GestZone = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbzona = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listViewSoci
@@ -153,11 +155,33 @@
             this.GestZone.Visible = false;
             this.GestZone.Click += new System.EventHandler(this.GestZone_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(459, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Filtro zona";
+            // 
+            // cmbzona
+            // 
+            this.cmbzona.FormattingEnabled = true;
+            this.cmbzona.Items.AddRange(new object[] {
+            "Tutte le zone"});
+            this.cmbzona.Location = new System.Drawing.Point(462, 43);
+            this.cmbzona.Name = "cmbzona";
+            this.cmbzona.Size = new System.Drawing.Size(121, 24);
+            this.cmbzona.TabIndex = 10;
+            this.cmbzona.SelectedIndexChanged += new System.EventHandler(this.cmbzona_SelectedIndexChanged);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 485);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbzona);
             this.Controls.Add(this.GestZone);
             this.Controls.Add(this.btnPrestazioniAltri);
             this.Controls.Add(this.label1);
@@ -191,6 +215,8 @@
         private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.Button btnPrestazioniAltri;
         private System.Windows.Forms.Button GestZone;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbzona;
     }
 }
 

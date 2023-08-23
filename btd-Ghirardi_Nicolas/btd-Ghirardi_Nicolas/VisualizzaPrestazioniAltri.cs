@@ -29,9 +29,11 @@ namespace btd_Ghirardi_Nicolas
             lstPrestazioniAltri.FullRowSelect = true;
             cmbFiltro.SelectedIndex = 0;
             cmbCategoriaFiltro.Items.AddRange(banca.CategoriePrestazioni.ToArray());
+            cmbZona.Items.AddRange(banca.zone.ToArray());
             cmbCategoriaFiltro.SelectedItem = "Tutte le Categorie";
             cmbFiltro.SelectedItem = "Tutte le Prestazioni";
-            PopolaPrestazioniFiltrate(banca.Pres);
+            cmbZona.SelectedItem=utenteSelezionato.Zona;
+            ApplyFilters();
         }
 
         private void InitializeListViewColumns()
@@ -41,6 +43,7 @@ namespace btd_Ghirardi_Nicolas
             lstPrestazioniAltri.Columns.Add("Ore", 50);
             lstPrestazioniAltri.Columns.Add("Richiedente", 150);
             lstPrestazioniAltri.Columns.Add("Datore", 150);
+            lstPrestazioniAltri.Columns.Add("zona", 150);
         }
 
         private void PopolaPrestazioniFiltrate(List<Prestazioni> prestazioni)
@@ -54,7 +57,7 @@ namespace btd_Ghirardi_Nicolas
                     string nomeRichiedente = NomeRichiedente(prestazione);
                     string nomeDatore = NomeDatore(prestazione);
 
-                    var listItem = new ListViewItem(new[] { prestazione.Categoria, prestazione.Lavoro, prestazione.Ore.ToString(), nomeRichiedente, nomeDatore });
+                    var listItem = new ListViewItem(new[] { prestazione.Categoria, prestazione.Lavoro, prestazione.Ore.ToString(), nomeRichiedente, nomeDatore,prestazione.Zona });
                     listItem.Tag = prestazione;
                     lstPrestazioniAltri.Items.Add(listItem);
                 }
@@ -93,7 +96,8 @@ namespace btd_Ghirardi_Nicolas
                         try
                         {
                             banca.Occupaprestazione(prestazioneSelezionata, socioRichiedente);
-                            PopolaPrestazioniFiltrate(banca.Pres);
+                            ApplyFilters(); 
+
                            
 
                         }
@@ -141,6 +145,11 @@ namespace btd_Ghirardi_Nicolas
             {
                 prestazioniFiltrate = prestazioniFiltrate.Where(p => p.Categoria == categoriaFiltro).ToList();
             }
+            if (cmbZona.Text != "Tutte le zone")
+            {
+                prestazioniFiltrate = prestazioniFiltrate.Where(socio => socio.Zona == cmbZona.Text).ToList();
+            }
+
 
             PopolaPrestazioniFiltrate(prestazioniFiltrate);
         }
@@ -160,6 +169,16 @@ namespace btd_Ghirardi_Nicolas
         {
 
             DialogResult = DialogResult.OK;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbZona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyFilters();
         }
     }
 

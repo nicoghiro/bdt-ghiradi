@@ -16,8 +16,9 @@ public class Prestazioni
     public int Ore { get; private set; }
     public DateTime Creazione { get; private set; }
     public DateTime Occupazione { get; private set; }
+    public string Zona { get; private set; }
 
-    public Prestazioni(string categoria, string lavoro, int idDatore, int ore)
+    public Prestazioni(string categoria, string lavoro, int idDatore, int ore,string zone)
     {
         Id = NextId++;
         Categoria = categoria;
@@ -27,9 +28,10 @@ public class Prestazioni
         IdRichiedente = -1; // Nessun richiedente inizialmente
         Ore = ore;
         Creazione = DateTime.Now;
+        Zona = zone;
     }
     [JsonConstructor]
-    public Prestazioni(int id, string categoria, string lavoro, int idDatore, int ore, bool occupato, int idRichiedente)
+    public Prestazioni(int id, string categoria, string lavoro, int idDatore, int ore, bool occupato, int idRichiedente,string zona)
     {
         
         Id = NextId++;
@@ -40,8 +42,9 @@ public class Prestazioni
         IdRichiedente = idRichiedente;
         Ore = ore;
         Creazione = DateTime.Now;
+        Zona= zona; 
     }
-
+    
     public void Occupa(int richiedenteId, int datoreId, List<Socio> soci)
     {
         if (Occupato)

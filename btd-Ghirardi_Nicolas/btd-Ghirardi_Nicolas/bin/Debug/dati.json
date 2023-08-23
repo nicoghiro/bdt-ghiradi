@@ -8,8 +8,9 @@
       "IdDatore": 2,
       "IdRichiedente": 3,
       "Ore": 7,
-      "Creazione": "2023-08-23T02:08:13.5230829+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
+      "Creazione": "2023-08-23T16:58:50.9191179+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Selvino"
     },
     {
       "Id": 1,
@@ -19,8 +20,9 @@
       "IdDatore": 2,
       "IdRichiedente": 3,
       "Ore": 3,
-      "Creazione": "2023-08-23T02:08:13.5230829+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
+      "Creazione": "2023-08-23T16:58:50.9201144+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Selvino"
     },
     {
       "Id": 2,
@@ -30,8 +32,9 @@
       "IdDatore": 3,
       "IdRichiedente": -1,
       "Ore": 30,
-      "Creazione": "2023-08-23T02:08:13.5257083+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
+      "Creazione": "2023-08-23T16:58:50.9201144+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Rigosa"
     },
     {
       "Id": 3,
@@ -41,30 +44,33 @@
       "IdDatore": 2,
       "IdRichiedente": 4,
       "Ore": 9,
-      "Creazione": "2023-08-23T02:08:13.5257083+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
+      "Creazione": "2023-08-23T16:58:50.9201144+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Selvino"
     },
     {
       "Id": 4,
       "Categoria": "Meccanico",
-      "Occupato": false,
+      "Occupato": true,
       "Lavoro": "ford",
       "IdDatore": 2,
-      "IdRichiedente": -1,
+      "IdRichiedente": 5,
       "Ore": 4,
-      "Creazione": "2023-08-23T02:08:13.5257083+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
+      "Creazione": "2023-08-23T16:58:50.9201144+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Selvino"
     },
     {
       "Id": 5,
       "Categoria": "Meccanico",
-      "Occupato": false,
+      "Occupato": true,
       "Lavoro": "fiat",
       "IdDatore": 2,
-      "IdRichiedente": -1,
+      "IdRichiedente": 5,
       "Ore": 5,
-      "Creazione": "2023-08-23T02:08:13.5257083+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
+      "Creazione": "2023-08-23T16:58:50.9201144+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Selvino"
     },
     {
       "Id": 6,
@@ -74,19 +80,21 @@
       "IdDatore": 1,
       "IdRichiedente": 0,
       "Ore": 4,
-      "Creazione": "2023-08-23T02:08:13.5257083+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
+      "Creazione": "2023-08-23T16:58:50.9201144+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Rigosa"
     },
     {
       "Id": 7,
       "Categoria": "Bambini",
-      "Occupato": false,
+      "Occupato": true,
       "Lavoro": "Acccudisco bambini 14/20",
       "IdDatore": 3,
-      "IdRichiedente": -1,
+      "IdRichiedente": 5,
       "Ore": 3,
-      "Creazione": "2023-08-23T02:08:13.5257083+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
+      "Creazione": "2023-08-23T16:58:50.9201144+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Rigosa"
     },
     {
       "Id": 8,
@@ -96,8 +104,21 @@
       "IdDatore": 4,
       "IdRichiedente": 0,
       "Ore": 3,
-      "Creazione": "2023-08-23T02:08:13.5257083+02:00",
-      "Occupazione": "0001-01-01T00:00:00"
+      "Creazione": "2023-08-23T16:58:50.9201144+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Selvino"
+    },
+    {
+      "Id": 9,
+      "Categoria": "Bambini",
+      "Occupato": false,
+      "Lavoro": "li accudisco ",
+      "IdDatore": 5,
+      "IdRichiedente": -1,
+      "Ore": 5,
+      "Creazione": "2023-08-23T16:58:50.9201144+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Algua"
     }
   ],
   "Soci": [
@@ -125,7 +146,7 @@
       "Nome": "Maria",
       "Telefono": "3249875517",
       "FaParteSegreteria": false,
-      "ore": 42,
+      "ore": 51,
       "Zona": "Selvino"
     },
     {
@@ -134,7 +155,7 @@
       "Nome": "mamma",
       "Telefono": "3333333333",
       "FaParteSegreteria": true,
-      "ore": 72,
+      "ore": 75,
       "Zona": "Rigosa"
     },
     {
@@ -145,6 +166,15 @@
       "FaParteSegreteria": false,
       "ore": -6,
       "Zona": "Selvino"
+    },
+    {
+      "Id": 5,
+      "Cognome": "Marconi ",
+      "Nome": "Franca",
+      "Telefono": "0321 987654",
+      "FaParteSegreteria": true,
+      "ore": -12,
+      "Zona": "Algua"
     }
   ],
   "CategoriePrestazioni": [
@@ -155,6 +185,7 @@
   ],
   "zone": [
     "Selvino",
-    "Rigosa"
+    "Rigosa",
+    "Algua"
   ]
 }

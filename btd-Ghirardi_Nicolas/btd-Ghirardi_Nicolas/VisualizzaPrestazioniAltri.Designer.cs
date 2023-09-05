@@ -41,10 +41,10 @@
             // lstPrestazioniAltri
             // 
             this.lstPrestazioniAltri.HideSelection = false;
-            this.lstPrestazioniAltri.Location = new System.Drawing.Point(256, 63);
+            this.lstPrestazioniAltri.Location = new System.Drawing.Point(255, 41);
             this.lstPrestazioniAltri.MultiSelect = false;
             this.lstPrestazioniAltri.Name = "lstPrestazioniAltri";
-            this.lstPrestazioniAltri.Size = new System.Drawing.Size(597, 341);
+            this.lstPrestazioniAltri.Size = new System.Drawing.Size(988, 369);
             this.lstPrestazioniAltri.TabIndex = 3;
             this.lstPrestazioniAltri.UseCompatibleStateImageBehavior = false;
             this.lstPrestazioniAltri.View = System.Windows.Forms.View.Details;
@@ -84,7 +84,8 @@
             this.cmbFiltro.Items.AddRange(new object[] {
             "Tutte le Prestazioni",
             "Non Occupate",
-            "Per Ore (decrescente)"});
+            "Per Ore (decrescente)",
+            "Recenza"});
             this.cmbFiltro.Location = new System.Drawing.Point(38, 82);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(121, 24);
@@ -126,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 450);
+            this.ClientSize = new System.Drawing.Size(1347, 455);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbZona);
             this.Controls.Add(this.btnOccupare);

@@ -125,8 +125,7 @@
             "Tutti i Soci",
             "Indebitati",
             "Num. ore decrescente",
-            "Num. ore crescente",
-            "Segretari"});
+            "Num. ore crescente"});
             this.cmbFiltro.Location = new System.Drawing.Point(308, 43);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(121, 24);

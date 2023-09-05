@@ -44,7 +44,8 @@
             this.cmbFiltro.Items.AddRange(new object[] {
             "Tutte le Prestazioni",
             "Non Occupate",
-            "Per Ore (decrescente)"});
+            "Per Ore (decrescente)",
+            "Recenza"});
             this.cmbFiltro.Location = new System.Drawing.Point(27, 65);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(121, 24);

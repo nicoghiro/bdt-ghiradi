@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace btd_Ghirardi_Nicolas
 {
     public partial class VisualizzaPrestazioniAltri : Form
+
     {
         private BTD banca;
         private Socio utenteSelezionato;
@@ -44,6 +45,7 @@ namespace btd_Ghirardi_Nicolas
             lstPrestazioniAltri.Columns.Add("Richiedente", 150);
             lstPrestazioniAltri.Columns.Add("Datore", 150);
             lstPrestazioniAltri.Columns.Add("zona", 150);
+            lstPrestazioniAltri.Columns.Add("data crezione", 150);
         }
 
         private void PopolaPrestazioniFiltrate(List<Prestazioni> prestazioni)
@@ -57,7 +59,7 @@ namespace btd_Ghirardi_Nicolas
                     string nomeRichiedente = NomeRichiedente(prestazione);
                     string nomeDatore = NomeDatore(prestazione);
 
-                    var listItem = new ListViewItem(new[] { prestazione.Categoria, prestazione.Lavoro, prestazione.Ore.ToString(), nomeRichiedente, nomeDatore,prestazione.Zona });
+                    var listItem = new ListViewItem(new[] { prestazione.Categoria, prestazione.Lavoro, prestazione.Ore.ToString(), nomeRichiedente, nomeDatore,prestazione.Zona,prestazione.Creazione.ToString() });
                     listItem.Tag = prestazione;
                     lstPrestazioniAltri.Items.Add(listItem);
                 }
@@ -140,7 +142,10 @@ namespace btd_Ghirardi_Nicolas
             {
                 prestazioniFiltrate = prestazioniFiltrate.OrderByDescending(p => p.Ore).ToList();
             }
-
+            else if(filtro == "Recenza")
+            {
+                prestazioniFiltrate = prestazioniFiltrate.OrderByDescending(p => p.Creazione).ToList();
+            }
             if (categoriaFiltro != "Tutte le Categorie")
             {
                 prestazioniFiltrate = prestazioniFiltrate.Where(p => p.Categoria == categoriaFiltro).ToList();
@@ -149,8 +154,7 @@ namespace btd_Ghirardi_Nicolas
             {
                 prestazioniFiltrate = prestazioniFiltrate.Where(socio => socio.Zona == cmbZona.Text).ToList();
             }
-
-
+            
             PopolaPrestazioniFiltrate(prestazioniFiltrate);
         }
 

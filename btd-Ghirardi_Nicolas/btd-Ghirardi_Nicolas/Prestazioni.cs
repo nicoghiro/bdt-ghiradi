@@ -31,7 +31,7 @@ public class Prestazioni
         Zona = zone;
     }
     [JsonConstructor]
-    public Prestazioni(int id, string categoria, string lavoro, int idDatore, int ore, bool occupato, int idRichiedente,string zona)
+    public Prestazioni(int id, string categoria, string lavoro, int idDatore, int ore, bool occupato, int idRichiedente,string zona,DateTime creazione,DateTime occupazione)
     {
         
         Id = NextId++;
@@ -41,7 +41,8 @@ public class Prestazioni
         IdDatore = idDatore;
         IdRichiedente = idRichiedente;
         Ore = ore;
-        Creazione = DateTime.Now;
+        Creazione = creazione;
+        Occupazione=occupazione;
         Zona= zona; 
     }
     

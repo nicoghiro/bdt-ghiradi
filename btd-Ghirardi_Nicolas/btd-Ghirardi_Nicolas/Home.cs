@@ -251,6 +251,7 @@ namespace btd_Ghirardi_Nicolas
             { 
                 filtrati = filtrati.Where(socio => socio.Zona == cmbzona.Text).ToList();
             }
+            
            
             
             popola(filtrati);

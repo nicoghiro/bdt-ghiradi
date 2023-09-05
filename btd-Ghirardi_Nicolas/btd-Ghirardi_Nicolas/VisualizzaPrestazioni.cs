@@ -118,6 +118,10 @@ namespace btd_Ghirardi_Nicolas
             {
                 attivitaFiltrate = attivitaFiltrate.OrderByDescending(p => p.Ore).ToList();
             }
+            else if (filtro == "Recenza")
+            {
+              attivitaFiltrate = attivitaFiltrate.OrderByDescending(p => p.Creazione).ToList();
+            }
 
             if (categoriaFiltro != "Tutte le Categorie")
             {

@@ -40,6 +40,7 @@
             this.GestZone = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbzona = new System.Windows.Forms.ComboBox();
+            this.btnStorico = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewSoci
@@ -174,11 +175,22 @@
             this.cmbzona.TabIndex = 10;
             this.cmbzona.SelectedIndexChanged += new System.EventHandler(this.cmbzona_SelectedIndexChanged);
             // 
+            // btnStorico
+            // 
+            this.btnStorico.Location = new System.Drawing.Point(804, 37);
+            this.btnStorico.Name = "btnStorico";
+            this.btnStorico.Size = new System.Drawing.Size(127, 35);
+            this.btnStorico.TabIndex = 12;
+            this.btnStorico.Text = "Storico ";
+            this.btnStorico.UseVisualStyleBackColor = true;
+            this.btnStorico.Click += new System.EventHandler(this.btnStorico_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 485);
+            this.Controls.Add(this.btnStorico);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbzona);
             this.Controls.Add(this.GestZone);
@@ -216,6 +228,7 @@
         private System.Windows.Forms.Button GestZone;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbzona;
+        private System.Windows.Forms.Button btnStorico;
     }
 }
 

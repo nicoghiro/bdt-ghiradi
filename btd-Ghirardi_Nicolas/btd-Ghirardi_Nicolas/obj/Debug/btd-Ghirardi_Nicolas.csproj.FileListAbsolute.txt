@@ -36,3 +36,4 @@ C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.ModificaPrestazione.resources
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.VisualizzaPrestazioniAltri.resources
 C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.Zone.resources
+C:\Users\nicolas\OneDrive\Desktop\bdt-ghiradi\btd-Ghirardi_Nicolas\btd-Ghirardi_Nicolas\obj\Debug\btd_Ghirardi_Nicolas.Storico.resources

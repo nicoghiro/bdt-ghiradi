@@ -286,6 +286,12 @@ namespace btd_Ghirardi_Nicolas
         {
             filtra();
         }
+
+        private void btnStorico_Click(object sender, EventArgs e)
+        {
+            Storico st = new Storico(banca);
+            st.ShowDialog();
+        }
     }
 }
 

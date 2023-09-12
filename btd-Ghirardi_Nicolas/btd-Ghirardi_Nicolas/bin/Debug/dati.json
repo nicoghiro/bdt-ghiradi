@@ -27,13 +27,13 @@
     {
       "Id": 2,
       "Categoria": "Elettricista",
-      "Occupato": false,
+      "Occupato": true,
       "Lavoro": "tiparo nintendo ds rotti",
       "IdDatore": 3,
-      "IdRichiedente": -1,
+      "IdRichiedente": 6,
       "Ore": 30,
       "Creazione": "2023-09-05T18:18:38.7331788+02:00",
-      "Occupazione": "0001-01-01T00:00:00",
+      "Occupazione": "2023-09-12T16:13:14.3048823+02:00",
       "Zona": "Rigosa"
     },
     {
@@ -131,6 +131,18 @@
       "Creazione": "2023-09-05T18:19:33.64315+02:00",
       "Occupazione": "0001-01-01T00:00:00",
       "Zona": "Selvino"
+    },
+    {
+      "Id": 11,
+      "Categoria": "Meccanico",
+      "Occupato": true,
+      "Lavoro": "riparo automobili",
+      "IdDatore": 6,
+      "IdRichiedente": 3,
+      "Ore": 6,
+      "Creazione": "2023-09-12T16:12:00.9275068+02:00",
+      "Occupazione": "2023-09-12T16:12:41.091137+02:00",
+      "Zona": "Rigosa"
     }
   ],
   "Soci": [
@@ -167,7 +179,7 @@
       "Nome": "mamma",
       "Telefono": "3333333333",
       "FaParteSegreteria": true,
-      "ore": 75,
+      "ore": 99,
       "Zona": "Rigosa"
     },
     {
@@ -187,6 +199,15 @@
       "FaParteSegreteria": true,
       "ore": -12,
       "Zona": "Algua"
+    },
+    {
+      "Id": 6,
+      "Cognome": "gnomo",
+      "Nome": "antinio",
+      "Telefono": "3249875517",
+      "FaParteSegreteria": true,
+      "ore": -24,
+      "Zona": "Rigosa"
     }
   ],
   "CategoriePrestazioni": [

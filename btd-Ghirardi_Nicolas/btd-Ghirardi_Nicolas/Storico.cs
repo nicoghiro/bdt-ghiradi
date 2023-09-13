@@ -114,5 +114,20 @@ namespace btd_Ghirardi_Nicolas
         {
             ApplyFilters();
         }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void cmbCategoriaFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void cmbZona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
     }
 }

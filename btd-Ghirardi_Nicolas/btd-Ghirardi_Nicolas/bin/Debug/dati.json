@@ -143,6 +143,18 @@
       "Creazione": "2023-09-12T16:12:00.9275068+02:00",
       "Occupazione": "2023-09-12T16:12:41.091137+02:00",
       "Zona": "Rigosa"
+    },
+    {
+      "Id": 12,
+      "Categoria": "Bambini",
+      "Occupato": false,
+      "Lavoro": "wkgfkleag",
+      "IdDatore": 2,
+      "IdRichiedente": -1,
+      "Ore": 4,
+      "Creazione": "2023-09-13T08:50:32.5327879+02:00",
+      "Occupazione": "0001-01-01T00:00:00",
+      "Zona": "Selvino"
     }
   ],
   "Soci": [
